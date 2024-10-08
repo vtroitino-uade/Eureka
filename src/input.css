@@ -24,4 +24,13 @@
   h2 {
     @apply font-montserrat text-h2-desktop;
   }
+  p {
+    @apply font-montserrat text-p-desktop;
+  }
+  a {
+    @apply text-gray-500 font-semibold;
+  }
+  button {
+    @apply flex items-start py-3 px-6 h-12 bg-indigo-700 rounded-lg shadow-md text-white;
+  }
 }
