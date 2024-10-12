@@ -10,22 +10,28 @@
     src: url("/assets/fonts/RampartOne-Regular.ttf");
   }
   @font-face {
+    font-family: "PublicSans";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/assets/fonts/PublicSans-VariableFont_wght.ttf");
+  }
+  @font-face {
     font-family: "Montserrat";
     font-style: normal;
     font-weight: 400;
     src: url("/assets/fonts/Montserrat-VariableFont_wght.ttf");
   }
   * {
-    @apply box-border font-montserrat text-black;
+    @apply box-border font-public-sans text-black;
   }
   h1 {
     @apply font-title text-h1-desktop;
   }
   h2 {
-    @apply font-montserrat text-h2-desktop;
+    @apply font-public-sans text-h2-desktop font-semibold;
   }
   p {
-    @apply font-montserrat text-p-desktop;
+    @apply font-public-sans text-p-desktop;
   }
   a {
     @apply text-gray-500 font-semibold;
