@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/output.css" />
+    <title>Eureka</title>
+  </head>
+  <body class="min-h-screen">
+    <header id="header-placeholder" class=""></header>
+    <main>
+      <div class="flex items-center justify-center h-[360px]">
+        <h1 class="">Avances...</h1>
+      </div>
+      <div class="grid grid-cols-1 gap-8 p-8 bg-[#F2FEFB]">
+        <!-- Propuesta Principal -->
+        <div
+          class="bg-teal-700 rounded-md p-4 text-center"
+        >
+          <h2 class="text-white">Propuesta Principal:</h2>
+        </div>
+
+        <!-- Sección del Proyecto -->
+        <div class="grid grid-cols-4 gap-4">
+          <!-- Nombre del Proyecto -->
+          <div class="bg-teal-700 rounded-md p-4 text-white text-center">
+            <p class="text-white">Nombre del proyecto:</p>
+          </div>
+
+          <!-- Dominio del Proyecto -->
+          <div class="bg-teal-700 rounded-md p-4 text-white text-center">
+            <p class="text-white">Dominio del proyecto:</p>
+            <p class="text-white">Prototipado:</p>
+          </div>
+
+          <!-- Eslogan -->
+          <div class="bg-teal-700 rounded-md p-4 text-white text-center">
+            <p class="text-white">Eslogan:</p>
+          </div>
+
+          <!-- Logo del Proyecto -->
+          <div class="bg-teal-700 rounded-md p-4 text-white text-center">
+            <p class="text-white">Logo del Proyecto:</p>
+          </div>
+
+        </div>
+        <div class="grid grid-cols-5 gap-4">
+
+          <!-- Paleta de Colores -->
+          <div class="bg-teal-700 rounded-md p-4 text-white col-span-3">
+            <h2 class="text-white">Paleta De Colores:</h2>
+            <div class="flex flex-wrap justify-center mt-4 gap-4">
+              <div class="flex flex-col items-center">
+                <div class="size-16 bg-black"></div>
+                <!-- <p class="text-white">#111E59</p> -->
+              </div>
+              <div class="flex flex-col items-center">
+                <div class="size-16 bg-gray-500"></div>
+                <!-- <p class="text-white">#6B7280</p> -->
+              </div>
+              <div class="flex flex-col items-center">
+                <div class="size-16 bg-teal-800"></div>
+                <!-- <p class="text-white">#115E59</p> -->
+              </div>
+              <div class="flex flex-col items-center">
+                <div class="size-16 bg-teal-500"></div>
+                <!-- <p class="text-white">#32A7B6</p> -->
+              </div>
+              <div class="flex flex-col items-center">
+                <div class="size-16 bg-indigo-700"></div>
+                <!-- <p class="text-white">#4338CA</p> -->
+              </div>
+              <div class="flex flex-col items-center">
+                <div class="size-16 bg-indigo-200"></div>
+                <!-- <p class="text-white">#C7D2FE</p> -->
+              </div>
+              <div class="flex flex-col items-center">
+                <div class="size-16 bg-[#F2FEFB]"></div>
+                <!-- <p class="text-white">#F2FEFB</p> -->
+              </div>
+              <div class="flex flex-col items-center">
+                <div class="size-16 bg-white"></div>
+                <!-- <p class="text-white">#FAFAF9</p> -->
+              </div>
+            </div>
+          </div>
+  
+          <!-- Roles -->
+          <div class="bg-teal-700 rounded-md p-4 text-white col-span-2">
+            <h2 class="text-white">Roles:</h2>
+            <ul class="mt-4 space-y-2">
+              <li><p class="text-white">Diseñador UX/UI:</p></li>
+              <li><p class="text-white">Maquetador:</p></li>
+              <li><p class="text-white">Comunicador:</p></li>
+              <li><p class="text-white">Programador:</p></li>
+            </ul>
+          </div>
+        </div>
+        <div class="m-auto">
+          <img src="./assets/img/arbol-del-sitio.png" alt="Arbol del sitio">
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $("#header-placeholder").load("./src/html/header.html");
+    // $("#footer-placeholder").load("./src/html/footer.html");
+  });
+</script>

@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}", "./index.html"],
+  content: ["./src/**/*.{html,js}", "./index.html", "./avances.html"],
   theme: {
     extend: {
       colors: {
@@ -10,6 +10,7 @@ module.exports = {
       fontFamily: {
         title: ["RampartOne", "Roboto", "system-ui"],
         montserrat: ["Montserrat", "system-ui"],
+        "public-sans": ["PublicSans", "system-ui"],
       },
       fontSize: {
         "h1-desktop": ["7rem", { lineHeight: "7rem" }],
