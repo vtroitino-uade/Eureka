@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/47629a96a6.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="./src/output.css" />
     <title>Eureka</title>
   </head>
@@ -14,9 +19,7 @@
       </div>
       <div class="grid grid-cols-1 gap-8 p-8 bg-[#F2FEFB]">
         <!-- Propuesta Principal -->
-        <div
-          class="bg-teal-700 rounded-md p-4 text-center"
-        >
+        <div class="bg-teal-700 rounded-md p-4 text-center">
           <h2 class="text-white">Propuesta Principal:</h2>
         </div>
 
@@ -42,10 +45,8 @@
           <div class="bg-teal-700 rounded-md p-4 text-white text-center">
             <p class="text-white">Logo del Proyecto:</p>
           </div>
-
         </div>
         <div class="grid grid-cols-5 gap-4">
-
           <!-- Paleta de Colores -->
           <div class="bg-teal-700 rounded-md p-4 text-white col-span-3">
             <h2 class="text-white">Paleta De Colores:</h2>
@@ -84,7 +85,7 @@
               </div>
             </div>
           </div>
-  
+
           <!-- Roles -->
           <div class="bg-teal-700 rounded-md p-4 text-white col-span-2">
             <h2 class="text-white">Roles:</h2>
@@ -97,17 +98,16 @@
           </div>
         </div>
         <div class="m-auto">
-          <img src="./assets/img/arbol-del-sitio.png" alt="Arbol del sitio">
+          <img src="./assets/img/arbol-del-sitio.png" alt="Arbol del sitio" />
         </div>
       </div>
     </main>
-    <footer></footer>
+    <footer id="footer-placeholder"></footer>
   </body>
 </html>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
   $(document).ready(function () {
     $("#header-placeholder").load("./src/html/header.html");
-    // $("#footer-placeholder").load("./src/html/footer.html");
+    $("#footer-placeholder").load("./src/html/footer.html");
   });
 </script>
