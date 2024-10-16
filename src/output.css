@@ -716,6 +716,10 @@ button {
   height: 1.25rem;
 }
 
+.h-16 {
+  height: 4rem;
+}
+
 .h-\[60vh\] {
   height: 60vh;
 }
