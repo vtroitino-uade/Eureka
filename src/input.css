@@ -28,7 +28,10 @@
     @apply font-title text-h1-desktop;
   }
   h2 {
-    @apply font-public-sans text-h2-desktop font-semibold;
+    @apply font-public-sans text-h2-desktop;
+  }
+  h3 {
+    @apply font-public-sans text-h3-desktop;
   }
   p {
     @apply font-public-sans text-p-desktop;
