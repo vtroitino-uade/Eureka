@@ -696,10 +696,6 @@ button {
   min-height: 100vh;
 }
 
-.w-full {
-  width: 100%;
-}
-
 .w-fit {
   width: -moz-fit-content;
   width: fit-content;
@@ -759,14 +755,6 @@ button {
 
 .gap-8 {
   gap: 2rem;
-}
-
-.gap-5 {
-  gap: 1.25rem;
-}
-
-.gap-2 {
-  gap: 0.5rem;
 }
 
 .space-y-2 > :not([hidden]) ~ :not([hidden]) {
@@ -842,6 +830,10 @@ button {
   padding: 1rem;
 }
 
+.p-5 {
+  padding: 1.25rem;
+}
+
 .p-8 {
   padding: 2rem;
 }
@@ -849,21 +841,6 @@ button {
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
-}
-
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
-.py-5 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-}
-
-.py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
 }
 
 .px-4 {
@@ -897,22 +874,6 @@ button {
   line-height: 2.5rem;
 }
 
-.text-p-sm-desktop {
-  font-size: 1rem;
-  line-height: 1rem;
-  font-weight: 400;
-}
-
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
-}
-
-.text-6xl {
-  font-size: 3.75rem;
-  line-height: 1;
-}
-
 .text-h1-desktop {
   font-size: 7rem;
   line-height: 7rem;
@@ -921,6 +882,12 @@ button {
 .text-p-desktop {
   font-size: 1.5rem;
   line-height: 1.5rem;
+  font-weight: 400;
+}
+
+.text-p-sm-desktop {
+  font-size: 1rem;
+  line-height: 1rem;
   font-weight: 400;
 }
 
@@ -937,11 +904,6 @@ button {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(250 250 249 / var(--tw-text-opacity));
-}
-
-.text-teal-700 {
-  --tw-text-opacity: 1;
-  color: rgb(15 118 110 / var(--tw-text-opacity));
 }
 
 .underline {
