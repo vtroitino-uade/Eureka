@@ -34,6 +34,9 @@
     @apply text-gray-500 font-semibold text-sm md:text-base;
   }
   button {
-    @apply flex items-start py-3 px-6 h-fit bg-indigo-700 rounded-lg shadow-md text-white text-center text-sm md:text-base;
+    @apply flex items-start py-3 px-6 h-fit bg-indigo-700 rounded-xl shadow-md text-white text-center text-sm md:text-base hover:outline hover:outline-1 hover:outline-indigo-700 hover:bg-white hover:text-indigo-700 hover:font-bold;
+  }
+  input[type="submit"] {
+    @apply hover:outline hover:outline-1 hover:outline-indigo-700 hover:bg-white hover:text-indigo-700 hover:font-bold;
   }
 }
