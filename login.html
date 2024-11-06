@@ -57,5 +57,23 @@
   $(document).ready(function () {
     $("#header-placeholder").load("./src/html/header.html");
     $("#footer-placeholder").load("./src/html/footer.html");
+
+    $("form").on("submit", function (event) {
+        event.preventDefault();
+        var email = $("#email").val();
+        var password = $("#password").val();
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailPattern.test(email)) {
+            $("#email").after('<span class="error-message" style="color: red;">El email es obligatorio.</span>');
+            return false;
+        }
+
+        if (password.length < 8) {
+            alert("La contraseña debe tener al menos 6 caracteres.");
+            event.preventDefault();
+            return false;
+        }
+    });
   });
 </script>
