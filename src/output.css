@@ -705,6 +705,40 @@ input[type="submit"]:hover {
   outline-color: #4338ca;
 }
 
+.container {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
 .fixed {
   position: fixed;
 }
@@ -737,12 +771,12 @@ input[type="submit"]:hover {
   left: 33.333333%;
 }
 
-.left-\[10\%\] {
-  left: 10%;
+.left-20 {
+  left: 5rem;
 }
 
-.left-\[5\%\] {
-  left: 5%;
+.left-\[10\%\] {
+  left: 10%;
 }
 
 .right-0 {
@@ -755,34 +789,6 @@ input[type="submit"]:hover {
 
 .top-full {
   top: 100%;
-}
-
-.left-4 {
-  left: 1rem;
-}
-
-.left-5 {
-  left: 1.25rem;
-}
-
-.left-10 {
-  left: 2.5rem;
-}
-
-.left-12 {
-  left: 3rem;
-}
-
-.left-20 {
-  left: 5rem;
-}
-
-.left-1\/2 {
-  left: 50%;
-}
-
-.left-1 {
-  left: 0.25rem;
 }
 
 .z-10 {
@@ -829,6 +835,10 @@ input[type="submit"]:hover {
 
 .grid {
   display: grid;
+}
+
+.hidden {
+  display: none;
 }
 
 .size-12 {
@@ -1126,6 +1136,11 @@ input[type="submit"]:hover {
   padding-right: 2.5rem;
 }
 
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -1175,8 +1190,8 @@ input[type="submit"]:hover {
 }
 
 .text-p-sm-desktop {
-  font-size: 1rem;
-  line-height: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
   font-weight: 400;
 }
 
