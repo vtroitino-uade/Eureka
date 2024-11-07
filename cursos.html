@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/47629a96a6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./src/output.css" />
+    <title>Eureka | Cursos y Tutores</title>
+    <style>
+      input[type="radio"]:checked + label {
+        border: 2px solid #14b8a6;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen overflow-x-hidden">
+    <header id="header-placeholder" class=""></header>
+    <main class="flex flex-grow flex-col bg-[#F2FEFB]">
+      <section class="h-max">
+        <div class="flex flex-col gap-4 p-10">
+          <h3 class="relative">
+            Descubre nuestros <span class="text-teal-500">cursos</span>...
+            <img
+              class="absolute top-full left-[5%]"
+              src="./assets/svg/vector-2.svg"
+              alt=""
+            />
+          </h3>
+          <p class="text-gray-500">Frase</p>
+        </div>
+        <div class="flex flex-wrap gap-4 px-10 pb-10">
+          <input
+            type="radio"
+            id="desarrollo"
+            name="selectorCursos"
+            class="opacity-0 fixed w-0"
+          />
+          <label
+            for="desarrollo"
+            class="flex items-center justify-between py-4 p-6 rounded-lg shadow-xl cursor-pointer bg-white checked:bg-black"
+          >
+            <div class="flex items-center gap-4">
+              <i class="fa-solid fa-code fa-lg"></i>
+              <p>Desarrollo</p>
+            </div>
+          </label>
+          <input
+            type="radio"
+            id="marketing"
+            name="selectorCursos"
+            class="opacity-0 fixed w-0 checked:bg-black"
+          />
+          <label
+            for="marketing"
+            class="flex items-center justify-between py-4 p-6 rounded-lg shadow-xl cursor-pointer bg-white checked:bg-black"
+          >
+            <div class="flex items-center gap-4">
+              <i class="fa-solid fa-comments-dollar fa-lg"></i>
+              <p>Marketing</p>
+            </div>
+          </label>
+        </div>
+        <div class="flex items-center justify-evenly gap-4 bg-white">
+          <div class="rounded-lg size-80">
+            <img src="" alt="placeholder" />
+            <p>Curso A</p>
+          </div>
+          <div class="rounded-lg size-80">
+            <img src="" alt="placeholder" />
+            <p>Curso B</p>
+          </div>
+          <div class="rounded-lg size-80">
+            <img src="" alt="placeholder" />
+            <p>Curso C</p>
+          </div>
+        </div>
+      </section>
+      <section class="h-max">
+        <h3 class="p-10">
+          Revisa nuestros
+          <span class="text-teal-500">tutoers destacados</span>...
+        </h3>
+        <div class="flex flex-wrap gap-4 px-10 pb-20">
+          <div
+            class="flex flex-col justify-between h-max p-4 w-64 bg-white rounded-2xl shadow-xl"
+          >
+            <div class="flex flex-col gap-4 text-center">
+              <img src="./assets/img/curso_html.webp" alt="" />
+              <div>
+                <p>Gordo Compu</p>
+                <p class="text-gray-500">Lic. en SER Gordo</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="footer-placeholder"></footer>
+  </body>
+</html>
+<script>
+  $(document).ready(function () {
+    $("#header-placeholder").load("./src/html/header.html");
+    $("#footer-placeholder").load("./src/html/footer.html");
+  });
+</script>
