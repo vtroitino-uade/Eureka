@@ -919,6 +919,10 @@ input[type="submit"]:hover {
   width: 100%;
 }
 
+.w-5 {
+  width: 1.25rem;
+}
+
 .min-w-\[450px\] {
   min-width: 450px;
 }

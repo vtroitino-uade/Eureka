@@ -9,17 +9,19 @@
         <a id="recursos" href="./recursos.html">Recursos</a>
       </li>
       <li class="text-center">
-        <a id="reservas-contacto" href="./reservas.html"
-          >Reservas y Contacto</a
-        >
+        <a id="reservas-contacto" href="./reservas.html">Reservas y Contacto</a>
       </li>
       <li class="text-center"><a id="faq" href="./faq.html">FAQ</a></li>
     </ul>
-    <div class="flex items-center gap-4">
+    <div id="auth" class="flex items-center gap-4">
       <a id="login" href="./login.html">Iniciar Sesion</a>
-      <a class="font-normal" href="./signin.html"
-        ><button>Regístrate</button></a
-      >
+      <a id="signin" class="font-normal" href="./signin.html"
+        ><button>Regístrate</button>
+      </a>
+    </div>
+    <div id="user" class="hidden gap-4">
+      <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+      <img src="" alt="Foto de perfil del usuario" class="rounded-full" />
     </div>
   </div>
 </nav>
@@ -32,7 +34,9 @@
   const reservas_contacto = document.getElementById("reservas-contacto");
   const faq = document.getElementById("faq");
   const login = document.getElementById("login");
-  
+  const auth = document.getElementById("auth");
+  const user = document.getElementById("user");
+
   links.forEach((link) => link.classList.remove("text-teal-500"));
 
   const path = window.location.pathname;
@@ -50,12 +54,12 @@
   } else {
     logo.classList.add("text-teal-500");
   }
-  
-  token = localStorage.getItem('token')
-  if (token !== null)
-  {
-    //aca metemos magia
+
+  const token = localStorage.getItem("token");
+  if (token !== null) {
+    auth.classList.add("hidden");
+    user.classList.remove("hidden");
+    user.classList.add("flex");
     console.log(token);
   }
-
 </script>
