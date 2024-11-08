@@ -21,6 +21,7 @@
     </div>
   </div>
 </nav>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
   const links = document.querySelectorAll("#navbar ul li a");
   const logo = document.getElementById("logo");
@@ -29,7 +30,7 @@
   const contacto = document.getElementById("contacto");
   const faq = document.getElementById("faq");
   const login = document.getElementById("login");
-
+  
   links.forEach((link) => link.classList.remove("text-teal-500"));
 
   const path = window.location.pathname;
