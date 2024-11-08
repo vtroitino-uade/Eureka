@@ -44,24 +44,24 @@
   const user = document.getElementById("user");
   const carrito = document.getElementById("carrito");
 
-  links.forEach((link) => link.classList.remove("text-teal-500"));
+  links.forEach((link) => link.classList.remove("text-blue-600"));
 
   const path = window.location.pathname;
 
   if (path.includes("login.html")) {
-    login.classList.add("text-teal-500");
+    login.classList.add("text-blue-600");
   } else if (path.includes("recursos.html")) {
-    recursos.classList.add("text-teal-500");
+    recursos.classList.add("text-blue-600");
   } else if (path.includes("cursos.html")) {
-    curso.classList.add("text-teal-500");
+    curso.classList.add("text-blue-600");
   } else if (path.includes("contacto.html")) {
-    contacto.classList.add("text-teal-500");
+    contacto.classList.add("text-blue-600");
   } else if (path.includes("faq.html")) {
-    faq.classList.add("text-teal-500");
+    faq.classList.add("text-blue-600");
   } else if (path.includes("carrito.html")) {
-    carrito.classList.add("text-teal-500");
+    carrito.classList.add("text-blue-600");
   } else {
-    logo.classList.add("text-teal-500");
+    logo.classList.add("text-blue-600");
   }
 
   const token = localStorage.getItem("token");

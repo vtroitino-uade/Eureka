@@ -31,14 +31,14 @@
     @apply font-public-sans text-p-mobile md:text-p-desktop;
   }
   a {
-    @apply text-gray-500 font-semibold text-sm hover:text-teal-500 md:text-base;
+    @apply text-gray-500 font-semibold text-sm hover:text-blue-600 md:text-base;
   }
   label {
     @apply font-bold;
   }
   input,
   textarea {
-    @apply p-4 outline outline-2 accent-teal-500 outline-gray-300 rounded-xl focus:outline-teal-500;
+    @apply p-4 outline outline-2 accent-blue-600 outline-gray-300 rounded-xl focus:outline-blue-600;
   }
   button,
   input[type="submit"] {
