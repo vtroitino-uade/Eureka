@@ -28,7 +28,7 @@
               <p>Ingresa tu contraseña</p>
             </label>
             <input type="password" id="password" name="password" />
-            <input type="submit" value="Ingresar" class="outline-none"/>
+            <input type="submit" value="Ingresar" class="outline-none" />
           </form>
         </div>
       </div>
@@ -40,9 +40,10 @@
   $(document).ready(function () {
     $("#header-placeholder").load("./src/html/header.html");
     $("#footer-placeholder").load("./src/html/footer.html");
-    $("#form").on('submit', function(e) {
+    $("#form").on("submit", function (e) {
       e.preventDefault();
       const token = Math.random().toString(36).substring(2);
-      localStorage.setItem('token', token);
+      localStorage.setItem("token", token);
+    });
   });
 </script>
