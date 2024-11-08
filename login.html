@@ -40,10 +40,37 @@
   $(document).ready(function () {
     $("#header-placeholder").load("./src/html/header.html");
     $("#footer-placeholder").load("./src/html/footer.html");
-    $("#form").on("submit", function (e) {
-      e.preventDefault();
-      const token = Math.random().toString(36).substring(2);
-      localStorage.setItem("token", token);
+
+    $("form").on("submit", function (event) {
+        $(".error-message").remove();
+        event.preventDefault();
+        const email = $("#email").val();
+        const password = $("#password").val();
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailPattern.test(email)) {
+            $("#email").after('<span class="error-message text-red" style="color: red;">El email es obligatorio.</span>');
+            return false;
+        }
+
+        if (password === "") {
+          $("#password").after('<span class="error-message" style="color: red;">La contraseña es obligatoria.</span>');
+            return false;
+        }
+
+        if (email != 'profe@uade.edu.ar' & password != '123456') {
+          $("#password").after('<span class="error-message" style="color: red;">El email o la contraseña son incorrectos.</span>');
+          $('#password').val('');
+            return false;
+        }
+        
+        const token = Math.random().toString(36).substring(2);
+        localStorage.setItem('token', token);
+
+        this.submit();
+
     });
-  });
+
+   
+});
 </script>
