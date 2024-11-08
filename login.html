@@ -75,7 +75,7 @@
             return false;
         }
 
-        if (email != 'profe@uade.edu.ar' & password != '123456') {
+        if (email != localStorage.getItem('email') || password != localStorage.getItem('password')) {
           $("#password").after('<span class="error-message" style="color: red;">El email o la contraseña son incorrectos.</span>');
           $('#password').val('');
             return false;

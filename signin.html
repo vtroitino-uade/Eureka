@@ -114,6 +114,8 @@
         }
 
         if (isValid) {
+            localStorage.setItem("email", email);
+            localStorage.setItem("password", password);
             this.submit();
         }
     });
