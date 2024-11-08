@@ -21,7 +21,7 @@ module.exports = {
         "h3-mobile": ["1.5rem", { lineHeight: "1.5rem", fontWeight: "500" }],
         "p-desktop": ["1.5rem", { lineHeight: "1.5rem", fontWeight: "400" }],
         "p-mobile": ["1rem", { lineHeight: "1rem", fontWeight: "400" }],
-        "p-sm-desktop": ["1.2rem", { lineHeight: "1.2rem", fontWeight: "400" }],
+        "p-sm-desktop": ["1rem", { lineHeight: "1rem", fontWeight: "400" }],
         "p-sm-mobile": ["0.25rem", { lineHeight: "0.25rem", fontWeight: "400" }],
       },
     },
