@@ -55,7 +55,7 @@
     logo.classList.add("text-teal-500");
   }
 
-  const token = localStorage.getItem("token");
+  const token = sessionStorage.getItem("token");
   if (token !== null) {
     auth.classList.add("hidden");
     user.classList.remove("hidden");
