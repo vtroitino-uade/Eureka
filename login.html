@@ -59,6 +59,7 @@
     $("#footer-placeholder").load("./src/html/footer.html");
 
     $("form").on("submit", function (event) {
+        $(".error-message").remove();
         event.preventDefault();
         var email = $("#email").val();
         var password = $("#password").val();
@@ -69,16 +70,28 @@
             return false;
         }
 
-        if (password.length < 8) {
-            alert("La contraseña debe tener al menos 8 caracteres.");
-            event.preventDefault();
+        if (password === "") {
+          $("#password").after('<span class="error-message" style="color: red;">La contraseña es obligatoria.</span>');
             return false;
         }
+
+        if (email != 'profe@uade.edu.ar' & password != '123456') {
+          $("#password").after('<span class="error-message" style="color: red;">El email o la contraseña son incorrectos.</span>');
+          $('#password').val('');
+            return false;
+        }
+        
+        const token = Math.random().toString(36).substring(2);
+        localStorage.setItem('token', token);
+        console.log('token');
+        setTimeout(function() {
+          localStorage.removeItem('token');
+        }, 1800000);
+        
+        this.submit();
+
     });
 
-    $("#form").on('submit', function(e) {
-      e.preventDefault();
-      const token = Math.random().toString(36).substring(2);
-      localStorage.setItem('token', token);
-  });
+   
+});
 </script>
