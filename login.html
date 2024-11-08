@@ -83,11 +83,7 @@
         
         const token = Math.random().toString(36).substring(2);
         localStorage.setItem('token', token);
-        console.log('token');
-        setTimeout(function() {
-          localStorage.removeItem('token');
-        }, 1800000);
-        
+
         this.submit();
 
     });
