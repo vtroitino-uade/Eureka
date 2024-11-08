@@ -9,9 +9,7 @@
         <a id="recursos" href="./recursos.html">Recursos</a>
       </li>
       <li class="text-center">
-        <a id="reservas-contacto" href="./reservas.html"
-          >Reservas y Contacto</a
-        >
+        <a id="contacto" href="./contacto.html">Contacto</a>
       </li>
       <li class="text-center"><a id="faq" href="./faq.html">FAQ</a></li>
     </ul>
@@ -28,7 +26,7 @@
   const logo = document.getElementById("logo");
   const curso = document.getElementById("curso");
   const recursos = document.getElementById("recursos");
-  const reservas_contacto = document.getElementById("reservas-contacto");
+  const contacto = document.getElementById("contacto");
   const faq = document.getElementById("faq");
   const login = document.getElementById("login");
 
@@ -42,8 +40,8 @@
     recursos.classList.add("text-teal-500");
   } else if (path.includes("cursos.html")) {
     curso.classList.add("text-teal-500");
-  } else if (path.includes("reservas.html")) {
-    reservas_contacto.classList.add("text-teal-500");
+  } else if (path.includes("contacto.html")) {
+    contacto.classList.add("text-teal-500");
   } else if (path.includes("faq.html")) {
     faq.classList.add("text-teal-500");
   } else {
