@@ -14,7 +14,7 @@
   <body class="flex flex-col min-h-screen overflow-x-hidden">
     <header id="header-placeholder" class=""></header>
     <main class="flex flex-1 items-center justify-center">
-      <div class="flex my-10 justify-center items-center">
+      <div class="flex my-20 justify-center items-center">
         <div class="flex flex-col gap-10 w-96">
           <div class="flex items-center justify-center">
             <img src="./assets/img/login.png" alt="Monitor de computadora" />
@@ -27,7 +27,7 @@
               type="email"
               id="email"
               name="email"
-              class="w-full p-4 outline outline-1 outline-gray-300 rounded-xl focus:outline-teal-700"
+              class="w-full p-4 outline outline-2 outline-gray-300 rounded-xl focus:outline-teal-500"
             />
             <label
               for="password"
@@ -39,7 +39,7 @@
               type="password"
               id="password"
               name="password"
-              class="w-full p-4 outline outline-1 outline-gray-300 rounded-xl focus:outline-teal-700"
+              class="w-full p-4 outline outline-2 outline-gray-300 rounded-xl focus:outline-teal-500"
             />
             <input
               type="submit"
@@ -70,10 +70,15 @@
         }
 
         if (password.length < 8) {
-            alert("La contraseña debe tener al menos 6 caracteres.");
+            alert("La contraseña debe tener al menos 8 caracteres.");
             event.preventDefault();
             return false;
         }
     });
+
+    $("#form").on('submit', function(e) {
+      e.preventDefault();
+      const token = Math.random().toString(36).substring(2);
+      localStorage.setItem('token', token);
   });
 </script>

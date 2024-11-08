@@ -1,29 +1,52 @@
-<nav id="navbar" class="flex items-center justify-between h-auto py-2 px-5">
+<nav id="navbar" class="flex items-center justify-between h-auto py-2 px-10">
   <a id="logo" href="./index.html" class="font-title text-4xl">E</a>
   <div class="flex md:gap-20">
     <ul class="flex flex-wrap items-center justify-center gap-4 md:gap-8">
-      <li class="text-center"><a href="">Cursos y Tutores</a></li>
-      <li class="text-center"><a href="">Recursos</a></li>
-      <li class="text-center"><a href="">Reservas y Contacto</a></li>
-      <li class="text-center"><a href="">FAQ</a></li>
+      <li class="text-center">
+        <a id="curso" href="./cursos.html">Cursos y Tutores</a>
+      </li>
+      <li class="text-center">
+        <a id="recursos" href="./recursos.html">Recursos</a>
+      </li>
+      <li class="text-center">
+        <a id="reservas-contacto" href="./reservas.html"
+          >Reservas y Contacto</a
+        >
+      </li>
+      <li class="text-center"><a id="faq" href="./faq.html">FAQ</a></li>
     </ul>
     <div class="flex items-center gap-4">
       <a id="login" href="./login.html">Iniciar Sesion</a>
-      <a class="font-normal" href="./signin.html"><button>Regístrate</button></a>
+      <a class="font-normal" href="./signin.html"
+        ><button>Regístrate</button></a
+      >
     </div>
   </div>
 </nav>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
   const links = document.querySelectorAll("#navbar ul li a");
   const logo = document.getElementById("logo");
+  const curso = document.getElementById("curso");
+  const recursos = document.getElementById("recursos");
+  const reservas_contacto = document.getElementById("reservas-contacto");
+  const faq = document.getElementById("faq");
   const login = document.getElementById("login");
-
+  
   links.forEach((link) => link.classList.remove("text-teal-500"));
 
   const path = window.location.pathname;
 
   if (path.includes("login.html")) {
     login.classList.add("text-teal-500");
+  } else if (path.includes("recursos.html")) {
+    recursos.classList.add("text-teal-500");
+  } else if (path.includes("cursos.html")) {
+    curso.classList.add("text-teal-500");
+  } else if (path.includes("reservas.html")) {
+    reservas_contacto.classList.add("text-teal-500");
+  } else if (path.includes("faq.html")) {
+    faq.classList.add("text-teal-500");
   } else {
     logo.classList.add("text-teal-500");
   }

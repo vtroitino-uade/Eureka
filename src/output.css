@@ -598,7 +598,7 @@ h2 {
   font-family: PublicSans, system-ui;
   font-size: 1.5rem;
   line-height: 1.5rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 @media (min-width: 768px) {
@@ -613,14 +613,14 @@ h3 {
   font-family: PublicSans, system-ui;
   font-size: 1.5rem;
   line-height: 1.5rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 @media (min-width: 768px) {
   h3 {
     font-size: 2rem;
     line-height: 2rem;
-    font-weight: 600;
+    font-weight: 500;
   }
 }
 
@@ -705,6 +705,44 @@ input[type="submit"]:hover {
   outline-color: #4338ca;
 }
 
+.container {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
 }
@@ -731,6 +769,10 @@ input[type="submit"]:hover {
 
 .left-1\/3 {
   left: 33.333333%;
+}
+
+.left-20 {
+  left: 5rem;
 }
 
 .left-\[10\%\] {
@@ -774,6 +816,11 @@ input[type="submit"]:hover {
   margin-bottom: 2.5rem;
 }
 
+.my-20 {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
 .ml-10 {
   margin-left: 2.5rem;
 }
@@ -790,9 +837,18 @@ input[type="submit"]:hover {
   display: grid;
 }
 
+.hidden {
+  display: none;
+}
+
 .size-12 {
   width: 3rem;
   height: 3rem;
+}
+
+.size-80 {
+  width: 20rem;
+  height: 20rem;
 }
 
 .size-\[440px\] {
@@ -835,6 +891,10 @@ input[type="submit"]:hover {
   min-height: 100vh;
 }
 
+.w-0 {
+  width: 0px;
+}
+
 .w-1\/2 {
   width: 50%;
 }
@@ -871,6 +931,10 @@ input[type="submit"]:hover {
   flex: 1 1 0%;
 }
 
+.flex-grow {
+  flex-grow: 1;
+}
+
 .-translate-x-1\/2 {
   --tw-translate-x: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -899,6 +963,10 @@ input[type="submit"]:hover {
 .translate-y-1\/2 {
   --tw-translate-y: 50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .flex-row {
@@ -1014,6 +1082,10 @@ input[type="submit"]:hover {
   border-radius: 0.75rem;
 }
 
+.border {
+  border-width: 1px;
+}
+
 .bg-\[\#F2FEFB\] {
   --tw-bg-opacity: 1;
   background-color: rgb(242 254 251 / var(--tw-bg-opacity));
@@ -1043,6 +1115,10 @@ input[type="submit"]:hover {
   padding: 0.25rem;
 }
 
+.p-10 {
+  padding: 2.5rem;
+}
+
 .p-2 {
   padding: 0.5rem;
 }
@@ -1051,14 +1127,18 @@ input[type="submit"]:hover {
   padding: 1rem;
 }
 
+.p-6 {
+  padding: 1.5rem;
+}
+
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
 }
 
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .py-2 {
@@ -1071,8 +1151,17 @@ input[type="submit"]:hover {
   padding-bottom: 5rem;
 }
 
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .pb-10 {
   padding-bottom: 2.5rem;
+}
+
+.pb-20 {
+  padding-bottom: 5rem;
 }
 
 .pt-10 {
@@ -1101,8 +1190,8 @@ input[type="submit"]:hover {
 }
 
 .text-p-sm-desktop {
-  font-size: 1rem;
-  line-height: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
   font-weight: 400;
 }
 
@@ -1134,6 +1223,11 @@ input[type="submit"]:hover {
   color: rgb(28 28 25 / var(--tw-text-opacity));
 }
 
+.text-gray-500 {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
 .text-gray-700 {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
@@ -1147,6 +1241,10 @@ input[type="submit"]:hover {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(250 250 249 / var(--tw-text-opacity));
+}
+
+.opacity-0 {
+  opacity: 0;
 }
 
 .shadow-md {
@@ -1174,12 +1272,21 @@ input[type="submit"]:hover {
   outline-width: 1px;
 }
 
+.outline-2 {
+  outline-width: 2px;
+}
+
 .outline-gray-300 {
   outline-color: #d1d5db;
 }
 
 .outline-teal-500 {
   outline-color: #14b8a6;
+}
+
+.checked\:bg-black:checked {
+  --tw-bg-opacity: 1;
+  background-color: rgb(28 28 25 / var(--tw-bg-opacity));
 }
 
 .hover\:cursor-pointer:hover {
@@ -1194,6 +1301,10 @@ input[type="submit"]:hover {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(250 250 249 / var(--tw-text-opacity));
+}
+
+.focus\:outline-teal-500:focus {
+  outline-color: #14b8a6;
 }
 
 .focus\:outline-teal-700:focus {

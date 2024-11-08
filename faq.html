@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/47629a96a6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./src/output.css" />
+    <title>Eureka | FAQ</title>
+  </head>
+  <body class="flex flex-col min-h-screen overflow-x-hidden">
+    <header id="header-placeholder" class=""></header>
+    <main class="flex flex-1 flex-col bg-[#F2FEFB]">
+      <div class="flex flex-col items-center gap-4 bg-teal-500 h-max py-10">
+        <h2 class="text-white">Preguntas Frecuentes</h2>
+        <img
+          src="./assets/img/persona-educandose.png"
+          alt="Persona estudiando en línea"
+        />
+      </div>
+      <div class="flex flex-1 flex-col gap-10 items-center justify-center h-max p-10">
+        <div
+          class="outline outline-1 outline-gray-300 container rounded-3xl p-4 cursor-pointer"
+        >
+          <p>¿Cómo funciona Eureka?</p>
+          <p class="text-p-sm-desktop hidden">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa
+            blanditiis est quis ducimus at dolorum, voluptates neque itaque
+            facilis quisquam perspiciatis optio atque! Dolorum minus impedit
+            voluptas, nihil earum quibusdam!
+          </p>
+        </div>
+        <div
+        class="outline outline-1 outline-gray-300 container rounded-3xl p-4 cursor-pointer"
+      >
+        <p>¿Cómo funciona Eureka?</p>
+        <p class="text-p-sm-desktop hidden">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa
+          blanditiis est quis ducimus at dolorum, voluptates neque itaque
+          facilis quisquam perspiciatis optio atque! Dolorum minus impedit
+          voluptas, nihil earum quibusdam!
+        </p>
+      </div>
+      <div
+      class="outline outline-1 outline-gray-300 container rounded-3xl p-4 cursor-pointer"
+    >
+      <p>¿Cómo funciona Eureka?</p>
+      <p class="text-p-sm-desktop hidden">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa
+        blanditiis est quis ducimus at dolorum, voluptates neque itaque
+        facilis quisquam perspiciatis optio atque! Dolorum minus impedit
+        voluptas, nihil earum quibusdam!
+      </p>
+    </div>
+      </div>
+    </main>
+    <footer id="footer-placeholder"></footer>
+  </body>
+</html>
+<script>
+  $(document).ready(function () {
+    $("#header-placeholder").load("./src/html/header.html");
+    $("#footer-placeholder").load("./src/html/footer.html");
+
+    $(".container").click(function () {
+      $(this).children("p.text-p-sm-desktop").slideToggle();
+    });
+  });
+</script>
