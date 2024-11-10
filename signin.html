@@ -130,7 +130,9 @@
       if (isValid) {
         localStorage.setItem("email", email);
         localStorage.setItem("password", password);
-        this.submit();
+        $.get("./src/html/login.html", function (data) {
+          $("body").html(data);
+        });
       }
     });
 
