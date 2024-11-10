@@ -16,63 +16,83 @@
     <main
       class="flex flex-1 flex-col items-center justify-center m-auto"
     >
-    <div class="btn-group m-2" role="group" aria-label="Course Type">
-      <input type="radio" class="btn-check" name="courseType" id="todos" autocomplete="off" checked>
-      <label class="btn btn-secondary" for="todos">Todos</label>
-      <input type="radio" class="btn-check" name="courseType" id="online" autocomplete="off">
-      <label class="btn btn-primary" for="online">Online</label>
-      <input type="radio" class="btn-check" name="courseType" id="presencial" autocomplete="off">
-      <label class="btn btn-secondary" for="presencial">Presencial</label>
-
-    </div>
-    <div>
-
-    </div>
-    <div class="course-card online w-64 h-64 border-black rounded-lg overflow-hidden shadow-lg m-4">
-      <span id="hours" class="hidden">10</span>
-      
-      <img src="path/to/image.jpg" alt="Course Image" class="w-full h-1/2 object-cover" />
-      <h2 class="text-xl font-bold mt-2">Course Title</h2>
-      <div class="flex justify-end mt-auto">
-      <div class="flex items-center">
-        <span class="text-yellow-500">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star-half-alt"></i>
-        </span>
-      </div>
-      <span id="price" class="text-lg font-semibold">100</span>
-      <span class="text-lg font-semibold">U$D</span>
-      </div>
-    </div>
-
-    <div class="course-card presencial w-64 h-64 border rounded-lg overflow-hidden shadow-lg m-4">
-      <span id="hours" class="hidden">20</span>
-      <img src="path/to/image.jpg" alt="Course Image" class="w-full h-1/2 object-cover" />
-      <h2 class="text-xl font-bold mt-2">Course Title</h2>
-      <div class="flex justify-end mt-auto">
-        <div class="flex items-center">
-          <span class="text-yellow-500">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </span>
+    <form class="w-full max-w-lg bg-white p-8 rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold mb-6">Formulario de Pago</h2>
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                Nombre Completo
+            </label>
+            <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="name"
+                type="text"
+                placeholder="Nombre Completo"
+            />
         </div>
-      <span id="price" class="text-lg font-semibold">200</span>
-      <span class="text-lg font-semibold">U$D</span>
-      </div>
-    </div>
-    <div class="m-4">
-      <form action="carrito.html" method="POST">
-        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-700">
-          Agregar al carrito
-        </button>
-      </form>
-    </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="dni">
+                DNI
+            </label>
+            <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="dni"
+                type="text"
+                placeholder="DNI"
+            />
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                Correo Electrónico
+            </label>
+            <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="email"
+                type="email"
+                placeholder="Correo Electrónico"
+            />
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="card-number">
+                Número de Tarjeta
+            </label>
+            <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="card-number"
+                type="text"
+                placeholder="Número de Tarjeta"
+            />
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="expiry-date">
+                Fecha de Expiración
+            </label>
+            <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="expiry-date"
+                type="text"
+                placeholder="MM/AA"
+            />
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="cvv">
+                CVV
+            </label>
+            <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="cvv"
+                type="text"
+                placeholder="CVV"
+            />
+        </div>
+        
+        <div class="flex items-center justify-between">
+            <button
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            >
+                Pagar
+            </button>
+        </div>
+    </form>
   </main>
     <footer id="footer-placeholder"></footer>
   </body>
@@ -82,41 +102,61 @@
     $("#header-placeholder").load("./src/html/header.html");
     $("#footer-placeholder").load("./src/html/footer.html");
 
+    $("input").focus(function () {
+      $(this).next(".error-message").remove();
+    });
 
-    $('input[name="courseType"]').change(function () {
-      if ($('#presencial').is(':checked')) {
-        $('.course-card.presencial').show();
-        $('.course-card.online').hide();
-      } else if ($('#online').is(':checked')) {
-        $('.course-card.presencial').hide();
-        $('.course-card.online').show();
-      }else{
-        $('.course-card.presencial').show();
-        $('.course-card.online').show();
+    $("form").submit(function (event) {
+      event.preventDefault();
+      let isValid = true;
+
+      // Clear previous error messages
+      $(".error-message").remove();
+
+      // Validate Name
+      if ($("#name").val().trim() === "") {
+        isValid = false;
+        $("#name").after('<p class="error-message text-red-500 text-xs italic">Por favor, ingrese su nombre completo.</p>');
+      }
+
+      // Validate DNI
+      if ($("#dni").val().trim() === "") {
+        isValid = false;
+        $("#dni").after('<p class="error-message text-red-500 text-xs italic">Por favor, ingrese su DNI.</p>');
+      }
+
+      // Validate Email
+      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+      if (!emailPattern.test($("#email").val().trim())) {
+        isValid = false;
+        $("#email").after('<p class="error-message text-red-500 text-xs italic">Por favor, ingrese un correo electrónico válido.</p>');
+      }
+
+      // Validate Card Number
+      if ($("#card-number").val().trim() === "") {
+        isValid = false;
+        $("#card-number").after('<p class="error-message text-red-500 text-xs italic">Por favor, ingrese el número de tarjeta.</p>');
+      }
+
+      // Validate Expiry Date
+      const expiryPattern = /^(0[1-9]|1[0-2])\/?([0-9]{2})$/;
+      if (!expiryPattern.test($("#expiry-date").val().trim())) {
+        isValid = false;
+        $("#expiry-date").after('<p class="error-message text-red-500 text-xs italic">Por favor, ingrese una fecha de expiración válida (MM/AA).</p>');
+      }
+
+      // Validate CVV
+      const cvvPattern = /^[0-9]{3,4}$/;
+      if (!cvvPattern.test($("#cvv").val().trim())) {
+        isValid = false;
+        $("#cvv").after('<p class="error-message text-red-500 text-xs italic">Por favor, ingrese un CVV válido.</p>');
+      }
+
+      if (isValid) {
+        // Submit the form or perform further actions
+        alert("Formulario enviado con éxito.");
       }
     });
-
-    $('.course-card').click(function () {
-      var courseType = $(this).hasClass('online') ? 'Online' : 'Presencial';
-      var courseTitle = $(this).find('h2').text();
-      var courseRating = $(this).find('.text-yellow-500').html();
-      var courseTime = $(this).find('#hours').text();
-      var courseProfessor = 'Saaaaanz';
-    
-      var courseInfoCard = `
-      <div class="course-info-card bg-lightblue-100 p-4 rounded-lg shadow-lg m-4">
-      <p><strong>Tipo de curso:</strong> ${courseType}</p>
-      <p><strong>Nombre del curso:</strong> ${courseTitle}</p>
-      <p><strong>Rating del curso:</strong> <span class="text-yellow-500">${courseRating}</span></p>
-      <p><strong>Tiempo del curso:</strong> ${courseTime} horas</p>
-      <p><strong>Profesor elegido:</strong> ${courseProfessor}</p>
-      </div>
-      `;
-
-      $('.course-info-card').remove();
-      $('main').append(courseInfoCard);
-    });
-
 
   });
 </script>
