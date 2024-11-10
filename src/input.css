@@ -31,9 +31,17 @@
     @apply font-public-sans text-p-mobile md:text-p-desktop;
   }
   a {
-    @apply text-gray-500 font-semibold text-sm md:text-base;
+    @apply text-gray-500 font-semibold text-sm hover:text-teal-500 md:text-base;
   }
-  button {
-    @apply flex items-start py-3 px-6 h-fit bg-indigo-700 rounded-lg shadow-md text-white text-sm md:text-base;
+  label {
+    @apply font-bold;
+  }
+  input,
+  textarea {
+    @apply p-4 outline outline-2 accent-teal-500 outline-gray-300 rounded-xl focus:outline-teal-500;
+  }
+  button,
+  input[type="submit"] {
+    @apply flex items-start cursor-pointer py-3 px-6 h-fit bg-indigo-700 rounded-xl shadow-md text-white text-center transition-colors duration-200 text-sm md:text-base hover:outline hover:outline-1 hover:outline-indigo-700 hover:bg-white hover:text-indigo-700 hover:font-bold;
   }
 }

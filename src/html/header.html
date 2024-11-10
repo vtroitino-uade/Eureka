@@ -1,32 +1,79 @@
-<nav id="navbar" class="flex items-center justify-between h-16 p-5">
-  <a id="logo" href="./index.html" class="font-title text-4xl">E</a>
-  <div class="flex md:gap-20">
+<nav id="navbar" class="flex items-center justify-between h-auto py-2 px-10">
+  <button class="block md:hidden bg-white text-white" id="menu-button">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <a id="logo" href="./index.html" class="hidden font-title text-4xl md:flex">
+    E
+  </a>
+  <div class="hidden md:flex md:gap-20">
     <ul class="flex flex-wrap items-center justify-center gap-4 md:gap-8">
-      <li class="text-center"><a href="">Cursos y Tutores</a></li>
-      <li class="text-center"><a href="">Recursos</a></li>
-      <li class="text-center"><a href="">Reservas y Contacto</a></li>
-      <li class="text-center"><a href="">FAQ</a></li>
       <li class="text-center">
-        <a id="avances" href="./avances.html">Avances</a>
+        <a id="curso" href="./cursos.html">Cursos y Tutores</a>
       </li>
+      <li class="text-center">
+        <a id="recursos" href="./recursos.html">Recursos</a>
+      </li>
+      <li class="text-center">
+        <a id="contacto" href="./contacto.html">Contacto</a>
+      </li>
+      <li class="text-center"><a id="faq" href="./faq.html">FAQ</a></li>
     </ul>
-    <div class="flex items-center gap-4">
-      <a href="">Iniciar Sesion</a>
-      <button>Registrate Gratis</button>
+    <div id="auth" class="flex items-center gap-4">
+      <a id="login" href="./login.html">Iniciar Sesion</a>
+      <a id="signin" class="font-normal" href="./signin.html"
+        ><button>Regístrate</button>
+      </a>
+    </div>
+    <div id="user" class="hidden items-center justify-center gap-10">
+      <a id="carrito" href="./carrito.html">
+        <i class="fa-solid fa-cart-shopping"></i>
+      </a>
+      <img
+        src="./assets/img/user.png"
+        alt="Foto de perfil del usuario"
+        class="rounded-full size-8"
+      />
     </div>
   </div>
 </nav>
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 <script>
-  const links = document.querySelectorAll("#navbar ul li");
+  const links = document.querySelectorAll("#navbar ul li a");
   const logo = document.getElementById("logo");
+  const curso = document.getElementById("curso");
+  const recursos = document.getElementById("recursos");
+  const contacto = document.getElementById("contacto");
+  const faq = document.getElementById("faq");
+  const login = document.getElementById("login");
+  const auth = document.getElementById("auth");
+  const user = document.getElementById("user");
+  const carrito = document.getElementById("carrito");
 
   links.forEach((link) => link.classList.remove("text-teal-500"));
 
   const path = window.location.pathname;
 
-  if (path.includes("avances.html")) {
-    avances.classList.add("text-teal-500");
+  if (path.includes("login.html")) {
+    login.classList.add("text-teal-500");
+  } else if (path.includes("recursos.html")) {
+    recursos.classList.add("text-teal-500");
+  } else if (path.includes("cursos.html")) {
+    curso.classList.add("text-teal-500");
+  } else if (path.includes("contacto.html")) {
+    contacto.classList.add("text-teal-500");
+  } else if (path.includes("faq.html")) {
+    faq.classList.add("text-teal-500");
+  } else if (path.includes("carrito.html")) {
+    carrito.classList.add("text-teal-500");
   } else {
     logo.classList.add("text-teal-500");
+  }
+
+  const token = sessionStorage.getItem("token");
+  if (token !== null) {
+    auth.classList.add("hidden");
+    user.classList.remove("hidden");
+    user.classList.add("flex");
+    console.log(token);
   }
 </script>

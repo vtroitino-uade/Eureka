@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/47629a96a6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./src/output.css" />
+    <title>Eureka | Carrito </title>
+  </head>
+  <body class="flex flex-col min-h-screen overflow-x-hidden">
+    <header id="header-placeholder" class=""></header>
+    <main
+      class="flex flex-1 flex-col items-center justify-center m-auto"
+    >
+    <div class="btn-group m-2" role="group" aria-label="Course Type">
+      <input type="radio" class="btn-check" name="courseType" id="todos" autocomplete="off" checked>
+      <label class="btn btn-secondary" for="todos">Todos</label>
+      <input type="radio" class="btn-check" name="courseType" id="online" autocomplete="off">
+      <label class="btn btn-primary" for="online">Online</label>
+      <input type="radio" class="btn-check" name="courseType" id="presencial" autocomplete="off">
+      <label class="btn btn-secondary" for="presencial">Presencial</label>
+
+    </div>
+    <div>
+
+    </div>
+    <div class="course-card online w-64 h-64 border-black rounded-lg overflow-hidden shadow-lg m-4">
+      <span id="hours" class="hidden">10</span>
+      
+      <img src="path/to/image.jpg" alt="Course Image" class="w-full h-1/2 object-cover" />
+      <h2 class="text-xl font-bold mt-2">Course Title</h2>
+      <div class="flex justify-end mt-auto">
+      <div class="flex items-center">
+        <span class="text-yellow-500">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+        </span>
+      </div>
+      <span id="price" class="text-lg font-semibold">100</span>
+      <span class="text-lg font-semibold">U$D</span>
+      </div>
+    </div>
+
+    <div class="course-card presencial w-64 h-64 border rounded-lg overflow-hidden shadow-lg m-4">
+      <span id="hours" class="hidden">20</span>
+      <img src="path/to/image.jpg" alt="Course Image" class="w-full h-1/2 object-cover" />
+      <h2 class="text-xl font-bold mt-2">Course Title</h2>
+      <div class="flex justify-end mt-auto">
+        <div class="flex items-center">
+          <span class="text-yellow-500">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </span>
+        </div>
+      <span id="price" class="text-lg font-semibold">200</span>
+      <span class="text-lg font-semibold">U$D</span>
+      </div>
+    </div>
+    <div class="m-4">
+      <a href="pago.html">
+        <button type="button">
+          Agregar al carrito
+        </button>
+    </div>
+  </main>
+    <footer id="footer-placeholder"></footer>
+  </body>
+</html>
+<script>
+  $(document).ready(function () {
+    $("#header-placeholder").load("./src/html/header.html");
+    $("#footer-placeholder").load("./src/html/footer.html");
+
+    $('.course-card').click(function () {
+      var courseType = $(this).hasClass('online') ? 'Online' : 'Presencial';
+      var courseTitle = $(this).find('h2').text();
+      var courseRating = $(this).find('.text-yellow-500').html();
+      var courseTime = $(this).find('#hours').text();
+      var courseProfessor = 'Saaaaanz';
+    
+      var courseInfoCard = `
+      <div class="course-info-card bg-lightblue-100 p-4 rounded-lg shadow-lg m-4">
+      <p><strong>Tipo de curso:</strong> ${courseType}</p>
+      <p><strong>Nombre del curso:</strong> ${courseTitle}</p>
+      <p><strong>Rating del curso:</strong> <span class="text-yellow-500">${courseRating}</span></p>
+      <p><strong>Tiempo del curso:</strong> ${courseTime} horas</p>
+      <p><strong>Profesor elegido:</strong> ${courseProfessor}</p>
+      </div>
+      `;
+
+      $('.course-info-card').remove();
+      $('main').append(courseInfoCard);
+    });
+
+
+  });
+</script>
