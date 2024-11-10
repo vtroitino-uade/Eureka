@@ -1,6 +1,11 @@
 <nav id="navbar" class="flex items-center justify-between h-auto py-2 px-10">
-  <a id="logo" href="./index.html" class="font-title text-4xl">E</a>
-  <div class="flex md:gap-20">
+  <button class="block md:hidden bg-white text-white" id="menu-button">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <a id="logo" href="./index.html" class="hidden font-title text-4xl md:flex">
+    E
+  </a>
+  <div class="hidden md:flex md:gap-20">
     <ul class="flex flex-wrap items-center justify-center gap-4 md:gap-8">
       <li class="text-center">
         <a id="curso" href="./cursos.html">Cursos y Tutores</a>
@@ -31,7 +36,7 @@
     </div>
   </div>
 </nav>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 <script>
   const links = document.querySelectorAll("#navbar ul li a");
   const logo = document.getElementById("logo");
