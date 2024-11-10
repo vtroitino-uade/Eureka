@@ -81,20 +81,6 @@
     $("#header-placeholder").load("./src/html/header.html");
     $("#footer-placeholder").load("./src/html/footer.html");
 
-
-    $('input[name="courseType"]').change(function () {
-      if ($('#presencial').is(':checked')) {
-        $('.course-card.presencial').show();
-        $('.course-card.online').hide();
-      } else if ($('#online').is(':checked')) {
-        $('.course-card.presencial').hide();
-        $('.course-card.online').show();
-      }else{
-        $('.course-card.presencial').show();
-        $('.course-card.online').show();
-      }
-    });
-
     $('.course-card').click(function () {
       var courseType = $(this).hasClass('online') ? 'Online' : 'Presencial';
       var courseTitle = $(this).find('h2').text();
