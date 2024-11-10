@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,9 +12,9 @@
     <title>Eureka | Recursos</title>
   </head>
   <body class="flex flex-col min-h-screen overflow-x-hidden">
-    <header id="header-placeholder" class=""></header>
+    <header id="header-placeholder"></header>
     <main class="flex flex-1 flex-col bg-[#F2FEFB]">
-      <div class="flex flex-col gap-20 bg-white p-10">
+      <section id="inicio" class="flex flex-col gap-20 bg-white p-10">
         <h2 class="text-center">
           Biblioteca De
           <span class="relative text-teal-500">
@@ -26,10 +26,263 @@
             />
           </span>
         </h2>
-        <div>
+        <div class="flex flex-col gap-4">
           <h3>Filtrar por categoría</h3>
+          <div>
+            <ul
+              class="flex flex-wrap items-center gap-4 md:gap-8"
+            >
+              <li class="text-center">
+                <a id="curso" href="#matematica">Matemática</a>
+              </li>
+              <li class="text-center">
+                <a id="recursos" href="#programacion">Programación</a>
+              </li>
+              <li class="text-center">
+                <a id="contacto" href="#web">Diseño y Desarrollo Web</a>
+              </li>
+              <li class="text-center"><a id="faq" href="#diseño">Diseño Gráfico</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
+      </section>
+      <section id="matematica" class="flex flex-col gap-4 p-10">
+        <h3>Matemática</h3>
+        <div class="flex flex-wrap gap-4">
+          <div
+            class="flex flex-col justify-between gap-4 p-4 w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl"
+          >
+            <div class="flex flex-col gap-4">
+              <img
+                src="./assets/img/ingenieria.webp"
+                alt="Traductor de ingenieria"
+                class="rounded-lg h-32"
+              />
+              <p>Derivadas</p>
+            </div>
+            <div class="flex justify-center">
+              <a
+                href="https://www.youtube.com/watch?v=_6-zwdrqD3U"
+                target="_blank"
+                class="flex items-start cursor-pointer h-fit bg-indigo-700 shadow-md text-white text-center transition-colors duration-200 text-sm md:text-base hover:outline hover:outline-1 hover:outline-indigo-700 hover:bg-white hover:text-indigo-700 hover:font-bold rounded-full p-0"
+              >
+                <i
+                  class="p-2 fa-solid fa-arrow-up-right-from-square text-white hover:text-indigo-700"
+                ></i>
+              </a>
+            </div>
+          </div>
+          <div
+            class="flex flex-col justify-between gap-4 p-4 w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl"
+          >
+            <div class="flex flex-col gap-4">
+              <img
+                src="./assets/img/ingenieria.webp"
+                alt="Traductor de ingenieria"
+                class="rounded-lg h-32"
+              />
+              <p>Integrales</p>
+            </div>
+            <div class="flex justify-center">
+              <a
+                href="https://www.youtube.com/watch?v=Ec-cGjh0Fr0"
+                target="_blank"
+                class="flex items-start cursor-pointer h-fit bg-indigo-700 shadow-md text-white text-center transition-colors duration-200 text-sm md:text-base hover:outline hover:outline-1 hover:outline-indigo-700 hover:bg-white hover:text-indigo-700 hover:font-bold rounded-full p-0"
+              >
+                <i
+                  class="p-2 fa-solid fa-arrow-up-right-from-square text-white hover:text-indigo-700"
+                ></i>
+              </a>
+            </div>
+          </div>
+          <div
+            class="flex flex-col justify-between gap-4 p-4 w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl"
+          >
+            <div class="flex flex-col gap-4">
+              <img
+                src="./assets/img/derivando.webp"
+                alt="Traductor de ingenieria"
+                class="rounded-lg h-32"
+              />
+              <p>Logaritmos</p>
+            </div>
+            <div class="flex justify-center">
+              <a
+                href="https://www.youtube.com/watch?v=W_BZb_va6jY"
+                target="_blank"
+                class="flex items-start cursor-pointer h-fit bg-indigo-700 shadow-md text-white text-center transition-colors duration-200 text-sm md:text-base hover:outline hover:outline-1 hover:outline-indigo-700 hover:bg-white hover:text-indigo-700 hover:font-bold rounded-full p-0"
+              >
+                <i
+                  class="p-2 fa-solid fa-arrow-up-right-from-square text-white hover:text-indigo-700"
+                ></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="programacion" class="flex flex-col gap-4 pt-0 px-10 pb-10">
+        <h3>Programación</h3>
+        <div class="flex flex-wrap gap-4">
+          <div
+            class="flex flex-col justify-between gap-4 p-4 w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl"
+          >
+            <div class="flex flex-col gap-4">
+              <img
+                src="./assets/img/moure.webp"
+                alt="Traductor de ingenieria"
+                class="rounded-lg h-32"
+              />
+              <p>Python desde CERO</p>
+            </div>
+            <div class="flex justify-center">
+              <a
+                href="https://www.youtube.com/watch?v=Kp4Mvapo5kc&list=PLNdFk2_brsRdgQXLIlKBXQDeRf3qvXVU_&index=2"
+                target="_blank"
+                class="flex items-start cursor-pointer h-fit bg-indigo-700 shadow-md text-white text-center transition-colors duration-200 text-sm md:text-base hover:outline hover:outline-1 hover:outline-indigo-700 hover:bg-white hover:text-indigo-700 hover:font-bold rounded-full p-0"
+              >
+                <i
+                  class="p-2 fa-solid fa-arrow-up-right-from-square text-white hover:text-indigo-700"
+                ></i>
+              </a>
+            </div>
+          </div>
+          <div
+            class="flex flex-col justify-between gap-4 p-4 w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl"
+          >
+            <div class="flex flex-col gap-4">
+              <img
+                src="./assets/img/python.webp"
+                alt="Traductor de ingenieria"
+                class="rounded-lg h-32"
+              />
+              <p>Automatización con Python</p>
+            </div>
+            <div class="flex justify-center">
+              <a
+                href="https://automatetheboringstuff.com/#toc"
+                target="_blank"
+                class="flex items-start cursor-pointer h-fit bg-indigo-700 shadow-md text-white text-center transition-colors duration-200 text-sm md:text-base hover:outline hover:outline-1 hover:outline-indigo-700 hover:bg-white hover:text-indigo-700 hover:font-bold rounded-full p-0"
+              >
+                <i
+                  class="p-2 fa-solid fa-arrow-up-right-from-square text-white hover:text-indigo-700"
+                ></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="web" class="flex flex-col gap-4 pt-0 px-10 pb-10">
+        <h3>Diseño y Desarrollo Web</h3>
+        <div class="flex flex-wrap gap-4">
+          <div
+            class="flex flex-col justify-between gap-4 p-4 w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl"
+          >
+            <div class="flex flex-col gap-4">
+              <img
+                src="./assets/img/froggy.webp"
+                alt="Traductor de ingenieria"
+                class="rounded-lg h-32"
+              />
+              <p>Flexbox Froggy</p>
+            </div>
+            <div class="flex justify-center">
+              <a
+                href="https://flexboxfroggy.com/#es"
+                target="_blank"
+                class="flex items-start cursor-pointer h-fit bg-indigo-700 shadow-md text-white text-center transition-colors duration-200 text-sm md:text-base hover:outline hover:outline-1 hover:outline-indigo-700 hover:bg-white hover:text-indigo-700 hover:font-bold rounded-full p-0"
+              >
+                <i
+                  class="p-2 fa-solid fa-arrow-up-right-from-square text-white hover:text-indigo-700"
+                ></i>
+              </a>
+            </div>
+          </div>
+          <div
+            class="flex flex-col justify-between gap-4 p-4 w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl"
+          >
+            <div class="flex flex-col gap-4">
+              <img
+                src="./assets/img/garden.webp"
+                alt="Traductor de ingenieria"
+                class="rounded-lg h-32"
+              />
+              <p>Grid Garden</p>
+            </div>
+            <div class="flex justify-center">
+              <a
+                href="https://cssgridgarden.com/#es"
+                target="_blank"
+                class="flex items-start cursor-pointer h-fit bg-indigo-700 shadow-md text-white text-center transition-colors duration-200 text-sm md:text-base hover:outline hover:outline-1 hover:outline-indigo-700 hover:bg-white hover:text-indigo-700 hover:font-bold rounded-full p-0"
+              >
+                <i
+                  class="p-2 fa-solid fa-arrow-up-right-from-square text-white hover:text-indigo-700"
+                ></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="diseño" class="flex flex-col gap-4 pt-0 px-10 pb-20">
+        <h3>Diseño Gráfico</h3>
+        <div class="flex flex-wrap gap-4">
+          <div
+            class="flex flex-col justify-between gap-4 p-4 w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl"
+          >
+            <div class="flex flex-col gap-4">
+              <img
+                src="./assets/img/envato.webp"
+                alt="Evanato (Recursos de Diseño)"
+                class="rounded-lg h-32"
+              />
+              <p>Envato (Recursos de Diseño)</p>
+            </div>
+            <div class="flex justify-center">
+              <a
+                href="https://elements.envato.com/es/"
+                target="_blank"
+                class="flex items-start cursor-pointer h-fit bg-indigo-700 shadow-md text-white text-center transition-colors duration-200 text-sm md:text-base hover:outline hover:outline-1 hover:outline-indigo-700 hover:bg-white hover:text-indigo-700 hover:font-bold rounded-full p-0"
+              >
+                <i
+                  class="p-2 fa-solid fa-arrow-up-right-from-square text-white hover:text-indigo-700"
+                ></i>
+              </a>
+            </div>
+          </div>
+          <div
+            class="flex flex-col justify-between gap-4 p-4 w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl"
+          >
+            <div class="flex flex-col gap-4">
+              <img
+                src="./assets/img/jaime.webp"
+                alt="Traductor de ingenieria"
+                class="rounded-lg h-32"
+              />
+              <p>Principios del Diseño Gráfico</p>
+            </div>
+            <div class="flex justify-center">
+              <a
+                href="https://www.youtube.com/watch?v=4fUbj8DzT6Q"
+                target="_blank"
+                class="flex items-start cursor-pointer h-fit bg-indigo-700 shadow-md text-white text-center transition-colors duration-200 text-sm md:text-base hover:outline hover:outline-1 hover:outline-indigo-700 hover:bg-white hover:text-indigo-700 hover:font-bold rounded-full p-0"
+              >
+                <i
+                  class="p-2 fa-solid fa-arrow-up-right-from-square text-white hover:text-indigo-700"
+                ></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="fixed bottom-0 right-0 p-10">
+          <a
+            href="#header-placeholder"
+            class="flex items-start cursor-pointer h-fit hover:bg-indigo-700 shadow-md text-white text-center transition-colors duration-200 text-sm md:text-base outline outline-1 outline-indigo-700 hover:font-bold rounded-full p-0"
+          >
+            <i
+              class="p-4 fa-solid fa-arrow-up fa-xl text-indigo-700 hover:text-white"
+            ></i>
+          </a>
+        </div>
+      </section>
     </main>
     <footer id="footer-placeholder"></footer>
   </body>
