@@ -34,6 +34,21 @@
         <div class="flex flex-wrap gap-4 px-10 pb-10">
           <input
             type="radio"
+            id="todos"
+            name="selectorCursos"
+            class="opacity-0 fixed w-0"
+          />
+          <label
+            for="todos"
+            class="flex items-center justify-between py-4 p-6 rounded-lg shadow-xl cursor-pointer bg-white"
+          >
+            <div class="flex items-center gap-4">
+              <i class="fa-solid fa-code fa-lg"></i>
+              <p>Todos</p>
+            </div>
+          </label>
+          <input
+            type="radio"
             id="desarrollo"
             name="selectorCursos"
             class="opacity-0 fixed w-0"
@@ -45,6 +60,36 @@
             <div class="flex items-center gap-4">
               <i class="fa-solid fa-code fa-lg"></i>
               <p>Desarrollo</p>
+            </div>
+          </label>
+          <input
+            type="radio"
+            id="IA"
+            name="selectorCursos"
+            class="opacity-0 fixed w-0"
+          />
+          <label
+            for="IA"
+            class="flex items-center justify-between py-4 p-6 rounded-lg shadow-xl cursor-pointer bg-white"
+          >
+            <div class="flex items-center gap-4">
+              <i class="fa-solid fa-code fa-lg"></i>
+              <p>Inteligencia Artificial</p>
+            </div>
+          </label>
+          <input
+            type="radio"
+            id="diseño"
+            name="selectorCursos"
+            class="opacity-0 fixed w-0"
+          />
+          <label
+            for="diseño"
+            class="flex items-center justify-between py-4 p-6 rounded-lg shadow-xl cursor-pointer bg-white"
+          >
+            <div class="flex items-center gap-4">
+              <i class="fa-solid fa-code fa-lg"></i>
+              <p>Diseño</p>
             </div>
           </label>
           <input
@@ -65,7 +110,7 @@
         </div>
         <div class="flex flex-wrap gap-4 px-10">
           <div
-            class="flex flex-col justify-between p-4 w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl"
+            class="course-card desarrollo flex flex-col justify-between p-4 w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl"
           >
             <div class="flex flex-col gap-4">
               <img src="./assets/img/curso_html.webp" alt="" />
@@ -89,7 +134,7 @@
             </div>
           </div>
           <div
-            class="flex flex-col justify-between p-4 w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl"
+            class="course-card diseño flex flex-col justify-between p-4 w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl"
           >
             <div class="flex flex-col gap-4">
               <img src="./assets/img/curso_diseño.webp" alt="" />
@@ -112,9 +157,7 @@
               </button>
             </div>
           </div>
-          <div
-            class="flex flex-col justify-between p-4 w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl"
-          >
+          <div class="course-card marketing flex flex-col justify-between p-4 w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl">
             <div class="flex flex-col gap-4">
               <img src="./assets/img/curso_negocios.webp" alt="" />
               <p>Clases de negocio</p>
@@ -137,11 +180,11 @@
             </div>
           </div>
           <div
-            class="flex flex-col justify-between p-4 w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl"
+            class="course-card IA flex flex-col justify-between p-4 w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl"
           >
-            <div class="flex flex-col gap-4">
+            <div class=" flex flex-col gap-4">
               <img src="./assets/img/curso_redes_sociales.webp" alt="" />
-              <p>Social Media</p>
+              <p>Social MediAI</p>
               <div class="flex gap-2 items-center">
                 <i class="fa-solid fa-star text-[#FFD43B]"></i>
                 <i class="fa-solid fa-star text-[#FFD43B]"></i>
@@ -199,5 +242,15 @@
   $(document).ready(function () {
     $("#header-placeholder").load("./src/html/header.html");
     $("#footer-placeholder").load("./src/html/footer.html");
+
+    $('input[name="selectorCursos"]').change(function () {
+      var selectedCategory = $(this).attr('id');
+      if (selectedCategory === 'todos') {
+        $('.course-card').show();
+        return;
+      }
+      $('.course-card').hide();
+      $('.course-card.' + selectedCategory).show();
+    });
   });
 </script>
