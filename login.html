@@ -62,7 +62,7 @@
         return false;
       }
 
-      if ((email != "profe@uade.edu.ar") & (password != "123456")) {
+      if ((email != localStorage.getItem('email')) || (localStorage.getItem('password') != password)) {
         $("#password").after(
           '<span class="error-message" style="color: red;">El email o la contraseña son incorrectos.</span>'
         );
@@ -71,8 +71,8 @@
       }
 
       const token = Math.random().toString(36).substring(2);
-      localStorage.setItem("token", token);
-
+      sessionStorage.setItem("token", token);
+      
       this.submit();
     });
   });
