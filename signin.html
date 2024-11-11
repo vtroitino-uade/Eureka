@@ -1,73 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script
-      src="https://kit.fontawesome.com/47629a96a6.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="./src/output.css" />
-    <title>Eureka | Registro</title>
-  </head>
-  <body class="flex flex-col min-h-screen overflow-x-hidden">
-    <header id="header-placeholder" class=""></header>
-    <main class="flex flex-1 items-center justify-center">
-      <div class="flex my-10 justify-center items-center">
-        <div class="flex flex-col gap-10 w-96">
-          <div class="flex items-center justify-center">
-            <img src="./assets/img/login.png" alt="Monitor de computadora" />
-          </div>
-          <h2 class="text-2xl font-bold text-center">Registrate y aprendé como nunca antes </h2>
-          <form action="" class="flex flex-col gap-10">
-            <label for="name" class="block">
-              <p class="text-gray-700">Ingresa tu nombre</p>
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              class="w-full p-4 outline outline-1 outline-gray-300 rounded-xl focus:outline-teal-700"
-            />
-            <label for="email" class="block">
-              <p class="text-gray-700">Ingresa tu email</p>
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              class="w-full p-4 outline outline-1 outline-gray-300 rounded-xl focus:outline-teal-700"
-            />
-            <label for="password" class="block">
-              <p>Ingresa tu contraseña</p>
-            </label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              class="w-full p-4 outline outline-1 outline-gray-300 rounded-xl focus:outline-teal-700"
-            />
-            <label for="confirm-password" class="block">
-              <p>Confirma tu contraseña</p>
-            </label>
-            <input
-              type="password"
-              id="confirm-password"
-              name="confirm-password"
-              class="w-full p-4 outline outline-1 outline-gray-300 rounded-xl focus:outline-teal-700"
-            />
-            <input
-              type="submit"
-              value="Registrarse"
-              class="flex items-start p-4 h-fit bg-indigo-700 rounded-xl shadow-md text-white text-center hover:cursor-pointer text-sm md:text-xl"
-            />
-          </form>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://kit.fontawesome.com/47629a96a6.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./src/output.css" />
+  <title>Eureka | Registro</title>
+</head>
+
+<body class="flex flex-col min-h-screen overflow-x-hidden">
+  <header id="header-placeholder" class=""></header>
+  <main class="flex flex-1 items-center justify-center">
+    <div class="flex my-10 justify-center items-center">
+      <div class="flex flex-col gap-10 w-96">
+        <div class="flex items-center justify-center">
+          <img src="./assets/img/login.png" alt="Monitor de computadora" />
         </div>
+        <h2 class="text-2xl font-bold text-center">Registrate y aprendé como nunca antes </h2>
+        <form action="" class="flex flex-col gap-10">
+          <label for="name" class="block">
+            <p class="text-gray-700">Ingresa tu nombre</p>
+          </label>
+          <input type="text" id="name" name="name"
+            class="w-full p-4 outline outline-1 outline-gray-300 rounded-xl focus:outline-teal-700" />
+          <label for="email" class="block">
+            <p class="text-gray-700">Ingresa tu email</p>
+          </label>
+          <input type="email" id="email" name="email"
+            class="w-full p-4 outline outline-1 outline-gray-300 rounded-xl focus:outline-teal-700" />
+          <label for="password" class="block">
+            <p>Ingresa tu contraseña</p>
+          </label>
+          <input type="password" id="password" name="password"
+            class="w-full p-4 outline outline-1 outline-gray-300 rounded-xl focus:outline-teal-700" />
+          <label for="confirm-password" class="block">
+            <p>Confirma tu contraseña</p>
+          </label>
+          <input type="password" id="confirm-password" name="confirm-password"
+            class="w-full p-4 outline outline-1 outline-gray-300 rounded-xl focus:outline-teal-700" />
+          <input type="submit" value="Registrarse"
+            class="flex items-start p-4 h-fit bg-indigo-700 rounded-xl shadow-md text-white text-center hover:cursor-pointer text-sm md:text-xl" />
+        </form>
       </div>
-    </main>
-    <footer id="footer-placeholder"></footer>
-  </body>
+    </div>
+  </main>
+  <footer id="footer-placeholder"></footer>
+</body>
+
 </html>
 <script>
   $(document).ready(function () {
@@ -133,7 +120,7 @@
         localStorage.setItem("password", password);
         window.location.href = './login.html';
         return;
-       
+
       }
     });
 

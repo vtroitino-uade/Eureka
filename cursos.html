@@ -1,435 +1,355 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script
-      src="https://kit.fontawesome.com/47629a96a6.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="./src/output.css" />
-    <title>Eureka | Cursos y Tutores</title>
-    <style>
-      input[type="radio"]:checked + label {
-        outline: 2px solid #14b8a6;
-      }
-    </style>
-  </head>
-  <body class="flex flex-col min-h-screen overflow-x-hidden">
-    <header id="header-placeholder" class=""></header>
-    <main class="flex flex-grow flex-col bg-[#F2FEFB]">
-      <section class="h-max">
-        <div class="flex flex-col gap-5 p-10">
-          <h3 class="relative">
-            Descubre nuestros <span class="text-teal-500">cursos</span>...
-            <img
-              class="absolute top-full left-20"
-              src="./assets/svg/vector-2.svg"
-              alt=""
-            />
-          </h3>
-          <p class="text-gray-500">Impulsá tu futuro y superá tus desafíos.</p>
-        </div>
-        <div class="flex flex-wrap gap-4 px-10 pb-10">
-          <input
-            type="radio"
-            id="todos"
-            name="selectorCursos"
-            class="opacity-0 fixed w-0"
-            checked
-          />
-          <label
-            for="todos"
-            class="flex items-center justify-between py-4 p-6 rounded-lg shadow-xl cursor-pointer bg-white"
-          >
-            <div class="flex items-center gap-4">
-              <i class="fa-solid fa-border-all fa-lg"></i>
-              <p>Todos</p>
-            </div>
-          </label>
-          <input
-            type="radio"
-            id="desarrollo"
-            name="selectorCursos"
-            class="opacity-0 fixed w-0"
-          />
-          <label
-            for="desarrollo"
-            class="flex items-center justify-between py-4 p-6 rounded-lg shadow-xl cursor-pointer bg-white"
-          >
-            <div class="flex items-center gap-4">
-              <i class="fa-solid fa-code fa-lg"></i>
-              <p>Desarrollo</p>
-            </div>
-          </label>
-          <input
-            type="radio"
-            id="IA"
-            name="selectorCursos"
-            class="opacity-0 fixed w-0"
-          />
-          <label
-            for="IA"
-            class="flex items-center justify-between py-4 p-6 rounded-lg shadow-xl cursor-pointer bg-white"
-          >
-            <div class="flex items-center gap-4">
-              <i class="fa-solid fa-microchip fa-lg"></i>
-              <p>Inteligencia Artificial</p>
-            </div>
-          </label>
-          <input
-            type="radio"
-            id="diseño"
-            name="selectorCursos"
-            class="opacity-0 fixed w-0"
-          />
-          <label
-            for="diseño"
-            class="flex items-center justify-between py-4 p-6 rounded-lg shadow-xl cursor-pointer bg-white"
-          >
-            <div class="flex items-center gap-4">
-              <i class="fa-solid fa-palette fa-lg"></i>
-              <p>Diseño</p>
-            </div>
-          </label>
-          <input
-            type="radio"
-            id="marketing"
-            name="selectorCursos"
-            class="opacity-0 fixed w-0 checked:bg-black"
-          />
-          <label
-            for="marketing"
-            class="flex items-center justify-between py-4 p-6 rounded-lg shadow-xl cursor-pointer bg-white checked:bg-black"
-          >
-            <div class="flex items-center gap-4">
-              <i class="fa-solid fa-comments-dollar fa-lg"></i>
-              <p>Marketing</p>
-            </div>
-          </label>
-        </div>
-        <div class="flex justify-center sm:justify-start flex-wrap gap-4 px-10">
-          <div
-            class="course-card desarrollo flex flex-col justify-between p-4 w-52 sm:w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl"
-          >
-            <div class="flex flex-col gap-4 pb-4">
-              <img src="./assets/img/curso_html.webp" alt="" />
-              <p>Cursos de HTML</p>
-              <div class="flex gap-2 items-center">
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <span id="rating" class="hidden">5</span>
-                <span id="hours" class="hidden">10</span>
-                <span id="profe" class="hidden">María Pérez</span>
-                <span>(15)</span>
-              </div>
-            </div>
-            <div class="flex flex-row justify-between">
-              <p><b>$ 500</b></p>
-              <button class="rounded-full p-0">
-                <i
-                  class="p-2 fa-solid fa-plus text-white hover:text-indigo-700"
-                ></i>
-              </button>
-            </div>
-          </div>
-          <div
-            class="course-card diseño flex flex-col justify-between p-4 w-52 sm:w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl"
-          >
-            <div class="flex flex-col gap-4">
-              <img src="./assets/img/curso_diseño.webp" alt="" />
-              <p>Asesorias en diseño</p>
-              <div class="flex gap-2 items-center">
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <span id="rating" class="hidden">5</span>
-                <span id="hours" class="hidden">10</span>
-                <span id="profe" class="hidden">María Pérez</span>
-                <span>(20)</span>
-              </div>
-            </div>
-            <div class="flex flex-row justify-between">
-              <p><b>$ 500</b></p>
-              <button class="rounded-full p-0">
-                <i
-                  class="p-2 fa-solid fa-plus text-white hover:text-indigo-700"
-                ></i>
-              </button>
-            </div>
-          </div>
-          <div
-            class="course-card marketing flex flex-col justify-between p-4 w-52 sm:w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl"
-          >
-            <div class="flex flex-col gap-4">
-              <img src="./assets/img/curso_negocios.webp" alt="" />
-              <p>Clases de negocio</p>
-              <div class="flex gap-2 items-center">
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#E7E9EB]"></i>
-                <span>(102)</span>
-              </div>
-              <span id="rating" class="hidden">4</span>
-              <span id="hours" class="hidden">10</span>
-              <span id="profe" class="hidden">Leonardo Cositorto</span>
-            </div>
-            <div class="flex flex-row justify-between">
-              <p><b>$ 500</b></p>
-              <button class="rounded-full p-0">
-                <i
-                  class="p-2 fa-solid fa-plus text-white hover:text-indigo-700"
-                ></i>
-              </button>
-            </div>
-          </div>
-          <div
-            class="course-card IA flex flex-col justify-between p-4 w-52 sm:w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl"
-          >
-            <div class="flex flex-col gap-4">
-              <img src="./assets/img/curso_redes_sociales.webp" alt="" />
-              <p>Social MediAI</p>
-              <div class="flex gap-2 items-center">
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <span>(20)</span>
-              </div>
-              <span id="rating" class="hidden">5</span>
-              <span id="hours" class="hidden">10</span>
-              <span id="profe" class="hidden">Candela Otero</span>
-            </div>
-            <div class="flex flex-row justify-between">
-              <p><b>$ 500</b></p>
-              <button class="rounded-full p-0">
-                <i
-                  class="p-2 fa-solid fa-plus text-white hover:text-indigo-700"
-                ></i>
-              </button>
-            </div>
-          </div>
-          <div
-            class="course-card marketing flex flex-col justify-between p-4 w-52 sm:w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl gap-4"
-          >
-            <div class="flex flex-col gap-4">
-              <img src="./assets/img/curso_cripto.png" alt="Curso Cripto" />
-              <p>Curso Cripto</p>
-              <div class="flex gap-2 items-center">
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <span>(20)</span>
-              </div>
-              <span id="rating" class="hidden">5</span>
-              <span id="hours" class="hidden">10</span>
-              <span id="profe" class="hidden">Leonardo Cositorto</span>
-            </div>
-            <div class="flex flex-row justify-between">
-              <p><b>$ 500</b></p>
-              <button class="rounded-full p-0">
-                <i
-                  class="p-2 fa-solid fa-plus text-white hover:text-indigo-700"
-                ></i>
-              </button>
-            </div>
-          </div>
 
-          <div
-            class="course-card IA flex flex-col justify-between p-4 w-52 sm:w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl"
-          >
-            <div class="flex flex-col gap-4">
-              <img
-                src="./assets/img/curso_machine.png"
-                alt="Machine Learning"
-              />
-              <p>Machine Learning</p>
-              <div class="flex gap-2 items-center">
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <span>(15)</span>
-              </div>
-              <span id="rating" class="hidden">4.8</span>
-              <span id="hours" class="hidden">12</span>
-              <span id="profe" class="hidden">Paula González</span>
-            </div>
-            <div class="flex flex-row justify-between">
-              <p><b>$ 600</b></p>
-              <button class="rounded-full p-0">
-                <i
-                  class="p-2 fa-solid fa-plus text-white hover:text-indigo-700"
-                ></i>
-              </button>
-            </div>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://kit.fontawesome.com/47629a96a6.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./src/output.css" />
+  <title>Eureka | Cursos y Tutores</title>
+  <style>
+    input[type="radio"]:checked+label {
+      outline: 2px solid #14b8a6;
+    }
+  </style>
+</head>
 
-          <div
-            class="course-card IA flex flex-col justify-between p-4 w-52 sm:w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl"
-          >
-            <div class="flex flex-col gap-4">
-              <img src="./assets/img/curso_data.png" alt="Data Science" />
-              <p>Data Science</p>
-              <div class="flex gap-2 items-center">
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <span>(18)</span>
-              </div>
-              <span id="rating" class="hidden">4.9</span>
-              <span id="hours" class="hidden">15</span>
-              <span id="profe" class="hidden">Paula González</span>
-            </div>
-            <div class="flex flex-row justify-between">
-              <p><b>$ 700</b></p>
-              <button class="rounded-full p-0">
-                <i
-                  class="p-2 fa-solid fa-plus text-white hover:text-indigo-700"
-                ></i>
-              </button>
-            </div>
-          </div>
-
-          <div
-            class="course-card IA flex flex-col justify-between p-4 w-52 sm:w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl"
-          >
-            <div class="flex flex-col gap-4">
-              <img src="./assets/img/curso_IA.png" alt="AI Fundametnals" />
-              <p>Python Fundamentals</p>
-              <div class="flex gap-2 items-center">
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <span>(22)</span>
-              </div>
-              <span id="rating" class="hidden">5</span>
-              <span id="hours" class="hidden">8</span>
-              <span id="profe" class="hidden">Jorge Gordo</span>
-            </div>
-            <div class="flex flex-row justify-between">
-              <p><b>$ 400</b></p>
-              <button class="rounded-full p-0">
-                <i
-                  class="p-2 fa-solid fa-plus text-white hover:text-indigo-700"
-                ></i>
-              </button>
-            </div>
-          </div>
-
-          <div
-            class="course-card IA flex flex-col justify-between p-4 w-52 sm:w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl gap-4"
-          >
-            <div class="flex flex-col gap-4">
-              <img
-                src="./assets/img/curso_natural.png"
-                alt="Natural Language Processing"
-              />
-              <p>Natural Language Processing</p>
-              <div class="flex gap-2 items-center">
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <i class="fa-solid fa-star text-[#FFD43B]"></i>
-                <span>(25)</span>
-              </div>
-              <span id="rating" class="hidden">5</span>
-              <span id="hours" class="hidden">20</span>
-              <span id="profe" class="hidden">Paula González</span>
-            </div>
-            <div class="flex flex-row justify-between">
-              <p><b>$ 800</b></p>
-              <button class="rounded-full p-0">
-                <i
-                  class="p-2 fa-solid fa-plus text-white hover:text-indigo-700"
-                ></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="h-max">
-        <h3 class="p-10">
-          Revisa nuestros
-          <span class="text-teal-500">tutores destacados</span>...
+<body class="flex flex-col min-h-screen overflow-x-hidden">
+  <header id="header-placeholder" class=""></header>
+  <main class="flex flex-grow flex-col bg-[#F2FEFB]">
+    <section class="h-max">
+      <div class="flex flex-col gap-5 p-10">
+        <h3 class="relative">
+          Descubre nuestros <span class="text-teal-500">cursos</span>...
+          <img class="absolute top-full left-20" src="./assets/svg/vector-2.svg" alt="" />
         </h3>
-        <div class="flex justify-center sm:justify-start flex-wrap gap-4 px-10">
-          <div
-            class="flex flex-col justify-between h-max p-4 w-52 sm:w-64 bg-white rounded-2xl shadow-xl"
-          >
-            <div class="flex flex-col gap-4 text-center">
-              <img src="./assets/img/maria.png" alt="" />
-              <div>
-                <p>María Pérez</p>
-                <p class="text-gray-500">Diseñadora UX/UI</p>
-              </div>
+        <p class="text-gray-500">Impulsá tu futuro y superá tus desafíos.</p>
+      </div>
+      <div class="flex flex-wrap gap-4 px-10 pb-10">
+        <input type="radio" id="todos" name="selectorCursos" class="opacity-0 fixed w-0" checked />
+        <label for="todos"
+          class="flex items-center justify-between py-4 p-6 rounded-lg shadow-xl cursor-pointer bg-white">
+          <div class="flex items-center gap-4">
+            <i class="fa-solid fa-border-all fa-lg"></i>
+            <p>Todos</p>
+          </div>
+        </label>
+        <input type="radio" id="desarrollo" name="selectorCursos" class="opacity-0 fixed w-0" />
+        <label for="desarrollo"
+          class="flex items-center justify-between py-4 p-6 rounded-lg shadow-xl cursor-pointer bg-white">
+          <div class="flex items-center gap-4">
+            <i class="fa-solid fa-code fa-lg"></i>
+            <p>Desarrollo</p>
+          </div>
+        </label>
+        <input type="radio" id="IA" name="selectorCursos" class="opacity-0 fixed w-0" />
+        <label for="IA" class="flex items-center justify-between py-4 p-6 rounded-lg shadow-xl cursor-pointer bg-white">
+          <div class="flex items-center gap-4">
+            <i class="fa-solid fa-microchip fa-lg"></i>
+            <p>Inteligencia Artificial</p>
+          </div>
+        </label>
+        <input type="radio" id="diseño" name="selectorCursos" class="opacity-0 fixed w-0" />
+        <label for="diseño"
+          class="flex items-center justify-between py-4 p-6 rounded-lg shadow-xl cursor-pointer bg-white">
+          <div class="flex items-center gap-4">
+            <i class="fa-solid fa-palette fa-lg"></i>
+            <p>Diseño</p>
+          </div>
+        </label>
+        <input type="radio" id="marketing" name="selectorCursos" class="opacity-0 fixed w-0 checked:bg-black" />
+        <label for="marketing"
+          class="flex items-center justify-between py-4 p-6 rounded-lg shadow-xl cursor-pointer bg-white checked:bg-black">
+          <div class="flex items-center gap-4">
+            <i class="fa-solid fa-comments-dollar fa-lg"></i>
+            <p>Marketing</p>
+          </div>
+        </label>
+      </div>
+      <div class="flex justify-center sm:justify-start flex-wrap gap-4 px-10">
+        <div
+          class="course-card desarrollo flex flex-col justify-between p-4 w-52 sm:w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl">
+          <div class="flex flex-col gap-4 pb-4">
+            <img src="./assets/img/curso_html.webp" alt="" />
+            <p>Cursos de HTML</p>
+            <div class="flex gap-2 items-center">
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <span id="rating" class="hidden">5</span>
+              <span id="hours" class="hidden">10</span>
+              <span id="profe" class="hidden">María Pérez</span>
+              <span>(15)</span>
             </div>
           </div>
-          <div
-            class="flex flex-col justify-between h-max p-4 w-52 sm:w-64 bg-white rounded-2xl shadow-xl"
-          >
-            <div class="flex flex-col gap-4 text-center">
-              <img src="./assets/img/paula.png" alt="" />
-              <div>
-                <p>Paula González</p>
-                <p class="text-gray-500">Ing. de Software</p>
-              </div>
+          <div class="flex flex-row justify-between">
+            <p><b>$ 500</b></p>
+            <button class="rounded-full p-0">
+              <i class="p-2 fa-solid fa-plus text-white hover:text-indigo-700"></i>
+            </button>
+          </div>
+        </div>
+        <div
+          class="course-card diseño flex flex-col justify-between p-4 w-52 sm:w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl">
+          <div class="flex flex-col gap-4">
+            <img src="./assets/img/curso_diseño.webp" alt="" />
+            <p>Asesorias en diseño</p>
+            <div class="flex gap-2 items-center">
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <span id="rating" class="hidden">5</span>
+              <span id="hours" class="hidden">10</span>
+              <span id="profe" class="hidden">María Pérez</span>
+              <span>(20)</span>
             </div>
           </div>
-          <div
-            class="flex flex-col justify-between h-max p-4 w-52 sm:w-64 bg-white rounded-2xl shadow-xl"
-          >
-            <div class="flex flex-col gap-4 text-center">
-              <img src="./assets/img/jorge.png" alt="" />
-              <div>
-                <p>Leonardo Cositorto</p>
-                <p class="text-gray-500">Economista</p>
-              </div>
-            </div>
+          <div class="flex flex-row justify-between">
+            <p><b>$ 500</b></p>
+            <button class="rounded-full p-0">
+              <i class="p-2 fa-solid fa-plus text-white hover:text-indigo-700"></i>
+            </button>
           </div>
-          <div
-            class="flex flex-col justify-between h-max p-4 w-52 sm:w-64 bg-white rounded-2xl shadow-xl"
-          >
-            <div class="flex flex-col gap-4 text-center">
-              <img src="./assets/img/joaquin.png" alt="" />
-              <div>
-                <p>Jorge Gordo</p>
-                <p class="text-gray-500">Java senior</p>
-              </div>
+        </div>
+        <div
+          class="course-card marketing flex flex-col justify-between p-4 w-52 sm:w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl">
+          <div class="flex flex-col gap-4">
+            <img src="./assets/img/curso_negocios.webp" alt="" />
+            <p>Clases de negocio</p>
+            <div class="flex gap-2 items-center">
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#E7E9EB]"></i>
+              <span>(102)</span>
+            </div>
+            <span id="rating" class="hidden">4</span>
+            <span id="hours" class="hidden">10</span>
+            <span id="profe" class="hidden">Leonardo Cositorto</span>
+          </div>
+          <div class="flex flex-row justify-between">
+            <p><b>$ 500</b></p>
+            <button class="rounded-full p-0">
+              <i class="p-2 fa-solid fa-plus text-white hover:text-indigo-700"></i>
+            </button>
+          </div>
+        </div>
+        <div
+          class="course-card IA flex flex-col justify-between p-4 w-52 sm:w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl">
+          <div class="flex flex-col gap-4">
+            <img src="./assets/img/curso_redes_sociales.webp" alt="" />
+            <p>Social MediAI</p>
+            <div class="flex gap-2 items-center">
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <span>(20)</span>
+            </div>
+            <span id="rating" class="hidden">5</span>
+            <span id="hours" class="hidden">10</span>
+            <span id="profe" class="hidden">Candela Otero</span>
+          </div>
+          <div class="flex flex-row justify-between">
+            <p><b>$ 500</b></p>
+            <button class="rounded-full p-0">
+              <i class="p-2 fa-solid fa-plus text-white hover:text-indigo-700"></i>
+            </button>
+          </div>
+        </div>
+        <div
+          class="course-card marketing flex flex-col justify-between p-4 w-52 sm:w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl gap-4">
+          <div class="flex flex-col gap-4">
+            <img src="./assets/img/curso_cripto.png" alt="Curso Cripto" />
+            <p>Curso Cripto</p>
+            <div class="flex gap-2 items-center">
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <span>(20)</span>
+            </div>
+            <span id="rating" class="hidden">5</span>
+            <span id="hours" class="hidden">10</span>
+            <span id="profe" class="hidden">Leonardo Cositorto</span>
+          </div>
+          <div class="flex flex-row justify-between">
+            <p><b>$ 500</b></p>
+            <button class="rounded-full p-0">
+              <i class="p-2 fa-solid fa-plus text-white hover:text-indigo-700"></i>
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="course-card IA flex flex-col justify-between p-4 w-52 sm:w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl">
+          <div class="flex flex-col gap-4">
+            <img src="./assets/img/curso_machine.png" alt="Machine Learning" />
+            <p>Machine Learning</p>
+            <div class="flex gap-2 items-center">
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <span>(15)</span>
+            </div>
+            <span id="rating" class="hidden">4.8</span>
+            <span id="hours" class="hidden">12</span>
+            <span id="profe" class="hidden">Paula González</span>
+          </div>
+          <div class="flex flex-row justify-between">
+            <p><b>$ 600</b></p>
+            <button class="rounded-full p-0">
+              <i class="p-2 fa-solid fa-plus text-white hover:text-indigo-700"></i>
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="course-card IA flex flex-col justify-between p-4 w-52 sm:w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl">
+          <div class="flex flex-col gap-4">
+            <img src="./assets/img/curso_data.png" alt="Data Science" />
+            <p>Data Science</p>
+            <div class="flex gap-2 items-center">
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <span>(18)</span>
+            </div>
+            <span id="rating" class="hidden">4.9</span>
+            <span id="hours" class="hidden">15</span>
+            <span id="profe" class="hidden">Paula González</span>
+          </div>
+          <div class="flex flex-row justify-between">
+            <p><b>$ 700</b></p>
+            <button class="rounded-full p-0">
+              <i class="p-2 fa-solid fa-plus text-white hover:text-indigo-700"></i>
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="course-card IA flex flex-col justify-between p-4 w-52 sm:w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl">
+          <div class="flex flex-col gap-4">
+            <img src="./assets/img/curso_IA.png" alt="AI Fundametnals" />
+            <p>Python Fundamentals</p>
+            <div class="flex gap-2 items-center">
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <span>(22)</span>
+            </div>
+            <span id="rating" class="hidden">5</span>
+            <span id="hours" class="hidden">8</span>
+            <span id="profe" class="hidden">Jorge Gordo</span>
+          </div>
+          <div class="flex flex-row justify-between">
+            <p><b>$ 400</b></p>
+            <button class="rounded-full p-0">
+              <i class="p-2 fa-solid fa-plus text-white hover:text-indigo-700"></i>
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="course-card IA flex flex-col justify-between p-4 w-52 sm:w-64 bg-white rounded-2xl shadow-[#4b4b4b14] shadow-xl gap-4">
+          <div class="flex flex-col gap-4">
+            <img src="./assets/img/curso_natural.png" alt="Natural Language Processing" />
+            <p>Natural Language Processing</p>
+            <div class="flex gap-2 items-center">
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <i class="fa-solid fa-star text-[#FFD43B]"></i>
+              <span>(25)</span>
+            </div>
+            <span id="rating" class="hidden">5</span>
+            <span id="hours" class="hidden">20</span>
+            <span id="profe" class="hidden">Paula González</span>
+          </div>
+          <div class="flex flex-row justify-between">
+            <p><b>$ 800</b></p>
+            <button class="rounded-full p-0">
+              <i class="p-2 fa-solid fa-plus text-white hover:text-indigo-700"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="h-max">
+      <h3 class="p-10">
+        Revisa nuestros
+        <span class="text-teal-500">tutores destacados</span>...
+      </h3>
+      <div class="flex justify-center sm:justify-start flex-wrap gap-4 px-10">
+        <div class="flex flex-col justify-between h-max p-4 w-52 sm:w-64 bg-white rounded-2xl shadow-xl">
+          <div class="flex flex-col gap-4 text-center">
+            <img src="./assets/img/maria.png" alt="" />
+            <div>
+              <p>María Pérez</p>
+              <p class="text-gray-500">Diseñadora UX/UI</p>
             </div>
           </div>
         </div>
-      </section>
-      <div class="sticky bottom-0 right-0 pb-10 pr-10 w-20 self-end">
-        <a
-          href="#header-placeholder"
-          class="flex items-center justify-center cursor-pointer h-fit hover:bg-indigo-700 shadow-md text-white text-center transition-colors duration-200 text-sm md:text-base hover:font-bold outline outline-1 outline-indigo-700 rounded-full"
-        >
-          <i
-            class="p-4 fa-solid fa-arrow-up fa-xl text-indigo-700 hover:text-white"
-          ></i>
-        </a>
+        <div class="flex flex-col justify-between h-max p-4 w-52 sm:w-64 bg-white rounded-2xl shadow-xl">
+          <div class="flex flex-col gap-4 text-center">
+            <img src="./assets/img/paula.png" alt="" />
+            <div>
+              <p>Paula González</p>
+              <p class="text-gray-500">Ing. de Software</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col justify-between h-max p-4 w-52 sm:w-64 bg-white rounded-2xl shadow-xl">
+          <div class="flex flex-col gap-4 text-center">
+            <img src="./assets/img/jorge.png" alt="" />
+            <div>
+              <p>Leonardo Cositorto</p>
+              <p class="text-gray-500">Economista</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col justify-between h-max p-4 w-52 sm:w-64 bg-white rounded-2xl shadow-xl">
+          <div class="flex flex-col gap-4 text-center">
+            <img src="./assets/img/joaquin.png" alt="" />
+            <div>
+              <p>Jorge Gordo</p>
+              <p class="text-gray-500">Java senior</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </main>
-    <footer id="footer-placeholder"></footer>
-  </body>
+    </section>
+    <div class="sticky bottom-0 right-0 pb-10 pr-10 w-20 self-end">
+      <a href="#header-placeholder"
+        class="flex items-center justify-center cursor-pointer h-fit hover:bg-indigo-700 shadow-md text-white text-center transition-colors duration-200 text-sm md:text-base hover:font-bold outline outline-1 outline-indigo-700 rounded-full">
+        <i class="p-4 fa-solid fa-arrow-up fa-xl text-indigo-700 hover:text-white"></i>
+      </a>
+    </div>
+  </main>
+  <footer id="footer-placeholder"></footer>
+</body>
+
 </html>
 <script>
   $(document).ready(function () {

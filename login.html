@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script
-      src="https://kit.fontawesome.com/47629a96a6.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="./src/output.css" />
-    <title>Eureka | Login </title>
-  </head>
-  <body class="flex flex-col min-h-screen overflow-x-hidden">
-    <header id="header-placeholder" class=""></header>
-    <main class="flex flex-1 items-center justify-center">
-      <div class="flex my-20 justify-center items-center">
-        <div class="flex flex-col gap-10 w-96">
-          <div class="flex items-center justify-center">
-            <img src="./assets/img/login.png" alt="Monitor de computadora" />
-          </div>
-          <h2 class="text-2xl font-bold text-center">Ingresá y seguí estudiando</h2>
-          <form action="" class="flex flex-col gap-10">
-            <label for="email" class="block">
-              <p class="text-gray-700">Ingresa tu email</p>
-            </label>
-            <input type="email" id="email" name="email" />
-            <label for="password" class="">
-              <p>Ingresa tu contraseña</p>
-            </label>
-            <input type="password" id="password" name="password" />
-            <p>¿Todavía no tenés una cuenta? <a href="signin.html">Registrate acá</a></p>
-            <input type="submit" value="Ingresar" class="outline-none" />
-          </form>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://kit.fontawesome.com/47629a96a6.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./src/output.css" />
+  <title>Eureka | Login </title>
+</head>
+
+<body class="flex flex-col min-h-screen overflow-x-hidden">
+  <header id="header-placeholder" class=""></header>
+  <main class="flex flex-1 items-center justify-center">
+    <div class="flex my-20 justify-center items-center">
+      <div class="flex flex-col gap-10 w-96">
+        <div class="flex items-center justify-center">
+          <img src="./assets/img/login.png" alt="Monitor de computadora" />
         </div>
+        <h2 class="text-2xl font-bold text-center">Ingresá y seguí estudiando</h2>
+        <form action="" class="flex flex-col gap-10">
+          <label for="email" class="block">
+            <p class="text-gray-700">Ingresa tu email</p>
+          </label>
+          <input type="email" id="email" name="email" />
+          <label for="password" class="">
+            <p>Ingresa tu contraseña</p>
+          </label>
+          <input type="password" id="password" name="password" />
+          <p>¿Todavía no tenés una cuenta? <a href="signin.html">Registrate acá</a></p>
+          <input type="submit" value="Ingresar" class="outline-none" />
+        </form>
       </div>
-    </main>
-    <footer id="footer-placeholder"></footer>
-  </body>
+    </div>
+  </main>
+  <footer id="footer-placeholder"></footer>
+</body>
+
 </html>
 <script>
   $(document).ready(function () {
@@ -75,10 +81,10 @@
       const token = Math.random().toString(36).substring(2);
       sessionStorage.setItem("token", token);
       url = localStorage.getItem('goBack')
-      if (!(url)){
-        
+      if (!(url)) {
+
         window.location.href = "./index.html";
-      }else{
+      } else {
         localStorage.removeItem('goBack')
         window.location.href = url
       }
