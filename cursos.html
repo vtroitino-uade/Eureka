@@ -311,7 +311,8 @@
       price: courseCard.find('b').text(),
       rating: courseCard.find('#rating').text(),
       hours: courseCard.find('#hours').text(),
-    profe: courseCard.find('#profe').text(),
+      profe: courseCard.find('#profe').text(),
+      image: courseCard.find('img').attr('src')
       };
 
       var isInCart = cart.some(function (course) {
