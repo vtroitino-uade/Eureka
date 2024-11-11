@@ -142,7 +142,7 @@
         gratis = localStorage.getItem('gratis');
         if(gratis){
           $("#success").html("<p class='text-white bg-teal-500 p-4 rounded-md'>"+gratis+"</p>");
-          gratis = null;
+          localStorage.removeItem('gratis');
         }
         $("form").on("submit", function (event) {
           event.preventDefault();
