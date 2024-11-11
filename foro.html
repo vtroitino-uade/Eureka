@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/47629a96a6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./src/output.css" />
+    <title>Eureka | Foro</title>
+  </head>
+  <body class="flex flex-col min-h-screen overflow-x-hidden">
+    <header id="header-placeholder" class=""></header>
+    <main class="flex flex-grow flex-col bg-[#F2FEFB]">
+      <section id="inicio" class="flex flex-col gap-20 bg-white p-10">
+        <h2 class="text-center">
+          Bienvenido al
+          <span class="relative text-teal-500">
+            Foro
+            <img
+              class="absolute left-0"
+              src="./assets/svg/vector-3.svg"
+              alt="Subrayado decorativo"
+            />
+          </span>
+        </h2>
+        <div class="flex flex-col gap-4">
+          <h3>Comparte tus ideas y resuelve tus dudas</h3>
+        </div>
+      </section>
+      <section class="h-max mt-10">
+        <div class="flex flex-col gap-4">
+          <div class="bg-white p-6 rounded-lg shadow-xl">
+            <h4 class="text-xl font-bold">Tema 1: Introducción a HTML</h4>
+            <p class="text-gray-500">Publicado por Usuario1</p>
+            <p class="mt-4">¿Alguien puede explicar cómo funcionan las etiquetas en HTML?</p>
+            <button class="mt-4">Responder</button>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-xl">
+            <h4 class="text-xl font-bold">Tema 2: CSS Flexbox</h4>
+            <p class="text-gray-500">Publicado por Usuario2</p>
+            <p class="mt-4">¿Cómo puedo centrar un div usando Flexbox?</p>
+            <button class="mt-4">Responder</button>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-xl">
+            <h4 class="text-xl font-bold">Tema 3: JavaScript Básico</h4>
+            <p class="text-gray-500">Publicado por Usuario3</p>
+            <p class="mt-4">¿Cuál es la diferencia entre var, let y const en JavaScript?</p>
+            <button class="mt-4">Responder</button>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-xl">
+            <h4 class="text-xl font-bold">Tema 4: React</h4>
+            <p class="text-gray-500">Publicado por Usuario4</p>
+            <p class="mt-4">¿Cómo puedo manejar el estado en un componente funcional en React?</p>
+            <button class="mt-4">Responder</button>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-xl">
+            <h4 class="text-xl font-bold">Tema 5: Node.js</h4>
+            <p class="text-gray-500">Publicado por Usuario5</p>
+            <p class="mt-4">¿Qué es el event loop en Node.js?</p>
+            <button class="mt-4">Responder</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="footer-placeholder"></footer>
+    <script>
+      $(document).ready(function () {
+        $("#header-placeholder").load("./src/html/header.html");
+        $("#footer-placeholder").load("./src/html/footer.html");
+      });
+    </script>
+  </body>
+</html>

@@ -13,7 +13,7 @@
   </head>
   <body class="flex flex-col min-h-screen overflow-x-hidden">
     <header id="header-placeholder"></header>
-    <main class="flex flex-1 flex-col bg-[#F2FEFB]">
+    <main class="flex flex-1 flex-col bg-[#F2FEFB] relative">
       <section id="inicio" class="flex flex-col gap-20 bg-white p-10">
         <h2 class="text-center">
           Biblioteca De
@@ -27,11 +27,9 @@
           </span>
         </h2>
         <div class="flex flex-col gap-4">
-          <h3>Filtrar por categoría</h3>
+          <h3>Buscar por categoría</h3>
           <div>
-            <ul
-              class="flex flex-wrap items-center gap-4 md:gap-8"
-            >
+            <ul class="flex flex-wrap items-center gap-4 md:gap-8">
               <li class="text-center">
                 <a id="curso" href="#matematica">Matemática</a>
               </li>
@@ -41,7 +39,9 @@
               <li class="text-center">
                 <a id="contacto" href="#web">Diseño y Desarrollo Web</a>
               </li>
-              <li class="text-center"><a id="faq" href="#diseño">Diseño Gráfico</a></li>
+              <li class="text-center">
+                <a id="faq" href="#diseño">Diseño Gráfico</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -222,7 +222,7 @@
           </div>
         </div>
       </section>
-      <section id="diseño" class="flex flex-col gap-4 pt-0 px-10 pb-20">
+      <section id="diseño" class="flex flex-col gap-4 pt-0 px-10">
         <h3>Diseño Gráfico</h3>
         <div class="flex flex-wrap gap-4">
           <div
@@ -272,17 +272,17 @@
             </div>
           </div>
         </div>
-        <div class="fixed bottom-0 right-0 p-10">
-          <a
-            href="#header-placeholder"
-            class="flex items-start cursor-pointer h-fit hover:bg-indigo-700 shadow-md text-white text-center transition-colors duration-200 text-sm md:text-base outline outline-1 outline-indigo-700 hover:font-bold rounded-full p-0"
-          >
-            <i
-              class="p-4 fa-solid fa-arrow-up fa-xl text-indigo-700 hover:text-white"
-            ></i>
-          </a>
-        </div>
       </section>
+      <div class="sticky bottom-0 right-0 pb-10 pr-10 w-20 self-end">
+        <a
+          href="#header-placeholder"
+          class="flex items-center justify-center cursor-pointer h-fit hover:bg-indigo-700 shadow-md text-white text-center transition-colors duration-200 text-sm md:text-base hover:font-bold outline outline-1 outline-indigo-700 rounded-full"
+        >
+          <i
+            class="p-4 fa-solid fa-arrow-up fa-xl text-indigo-700 hover:text-white"
+          ></i>
+        </a>
+      </div>
     </main>
     <footer id="footer-placeholder"></footer>
   </body>

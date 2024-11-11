@@ -122,6 +122,9 @@
                 <i class="fa-solid fa-star text-[#FFD43B]"></i>
                 <i class="fa-solid fa-star text-[#FFD43B]"></i>
                 <i class="fa-solid fa-star text-[#FFD43B]"></i>
+                <span id="rating" class="hidden">5</span>
+                <span id="hours" class="hidden">10</span>
+                <span id="profe" class="hidden">micho tito jr</span>
                 <span>(15)</span>
               </div>
             </div>
@@ -146,6 +149,9 @@
                 <i class="fa-solid fa-star text-[#FFD43B]"></i>
                 <i class="fa-solid fa-star text-[#FFD43B]"></i>
                 <i class="fa-solid fa-star text-[#FFD43B]"></i>
+                <span id="rating" class="hidden">5</span>
+                <span id="hours" class="hidden">10</span>
+                <span id="profe" class="hidden">anashe las de 12 son god</span>
                 <span>(20)</span>
               </div>
             </div>
@@ -170,6 +176,9 @@
                 <i class="fa-solid fa-star text-[#E7E9EB]"></i>
                 <span>(102)</span>
               </div>
+              <span id="rating" class="hidden">4</span>
+              <span id="hours" class="hidden">10</span>
+              <span id="profe" class="hidden">Vegetta777</span>
             </div>
             <div class="flex flex-row justify-between">
               <p><b>$ 500</b></p>
@@ -194,6 +203,9 @@
                 <i class="fa-solid fa-star text-[#FFD43B]"></i>
                 <span>(20)</span>
               </div>
+              <span id="rating" class="hidden">5</span>
+              <span id="hours" class="hidden">10</span>
+              <span id="profe" class="hidden">Saaaaanz</span>
             </div>
             <div class="flex flex-row justify-between">
               <p><b>$ 500</b></p>
@@ -241,7 +253,10 @@
 </html>
 <script>
   $(document).ready(function () {
-    $("#header-placeholder").load("./src/html/header.html");
+    $("#header-placeholder").load("./src/html/header.html", function(){
+      updateCartCounter();
+    });
+    
     $("#footer-placeholder").load("./src/html/footer.html");
 
     $('input[name="selectorCursos"]').change(function () {
@@ -253,5 +268,73 @@
       $('.course-card').hide();
       $('.course-card.' + selectedCategory).show();
     });
+    
+    var notificationSuccess = $('<div></div>')
+      .text('¡Agregado al carrito!')
+      .css({
+      position: 'fixed',
+      top: '100px',
+      right: '10px',
+      background: '#14b8a6',
+      color: 'white',
+      padding: '10px',
+      borderRadius: '5px',
+      display: 'none',
+      zIndex: 1000
+      })
+      .appendTo('body');
+    
+    var notificationAlreadyInCart = $('<div></div>')
+    .text('¡Ese producto ya esta en tu carrito!')
+    .css({
+    position: 'fixed',
+    top: '100px',
+    right: '10px',
+    background: '#fc0328',
+    color: 'white',
+    padding: '10px',
+    borderRadius: '5px',
+    display: 'none',
+    zIndex: 1000
+    })
+    .appendTo('body');
+
+    function showNotification(notification) {
+      notification.fadeIn().delay(2000).fadeOut();
+    }
+
+    $('.course-card button').click(function () {
+      var cart = JSON.parse(localStorage.getItem('cart')) || [];
+      var courseCard = $(this).closest('.course-card');
+      var courseInfo = {
+      title: courseCard.find('p').first().text(),
+      price: courseCard.find('b').text(),
+      rating: courseCard.find('#rating').text(),
+      hours: courseCard.find('#hours').text(),
+      profe: courseCard.find('#profe').text(),
+      };
+
+      var isInCart = cart.some(function (course) {
+        return course.title === courseInfo.title;
+      });
+
+      if (!isInCart) {
+        cart.push(courseInfo);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        var cartCount = cart.length;
+        $('#cart-count').text(cartCount);
+        showNotification(notificationSuccess);
+      }else	{
+        showNotification(notificationAlreadyInCart);
+      }
+    });
+
   });
+
+  function updateCartCounter() {
+    var cart = JSON.parse(localStorage.getItem('cart')) || [];
+    var cartCount = cart.length;
+    $('#cart-count').text(cartCount);
+    return cart;
+  }
 </script>

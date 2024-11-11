@@ -9,99 +9,152 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="./src/output.css" />
-    <title>Eureka | Carrito </title>
+    <title>Eureka | Carrito</title>
   </head>
   <body class="flex flex-col min-h-screen overflow-x-hidden">
     <header id="header-placeholder" class=""></header>
     <main
       class="flex flex-1 flex-col items-center justify-center m-auto"
     >
-    <div class="btn-group m-2" role="group" aria-label="Course Type">
-      <input type="radio" class="btn-check" name="courseType" id="todos" autocomplete="off" checked>
-      <label class="btn btn-secondary" for="todos">Todos</label>
-      <input type="radio" class="btn-check" name="courseType" id="online" autocomplete="off">
-      <label class="btn btn-primary" for="online">Online</label>
-      <input type="radio" class="btn-check" name="courseType" id="presencial" autocomplete="off">
-      <label class="btn btn-secondary" for="presencial">Presencial</label>
-
-    </div>
-    <div>
-
-    </div>
-    <div class="course-card online w-64 h-64 border-black rounded-lg overflow-hidden shadow-lg m-4">
-      <span id="hours" class="hidden">10</span>
-      
-      <img src="path/to/image.jpg" alt="Course Image" class="w-full h-1/2 object-cover" />
-      <h2 class="text-xl font-bold mt-2">Course Title</h2>
-      <div class="flex justify-end mt-auto">
-      <div class="flex items-center">
-        <span class="text-yellow-500">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star-half-alt"></i>
-        </span>
-      </div>
-      <span id="price" class="text-lg font-semibold">100</span>
-      <span class="text-lg font-semibold">U$D</span>
-      </div>
-    </div>
-
-    <div class="course-card presencial w-64 h-64 border rounded-lg overflow-hidden shadow-lg m-4">
-      <span id="hours" class="hidden">20</span>
-      <img src="path/to/image.jpg" alt="Course Image" class="w-full h-1/2 object-cover" />
-      <h2 class="text-xl font-bold mt-2">Course Title</h2>
-      <div class="flex justify-end mt-auto">
-        <div class="flex items-center">
-          <span class="text-yellow-500">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </span>
-        </div>
-      <span id="price" class="text-lg font-semibold">200</span>
-      <span class="text-lg font-semibold">U$D</span>
-      </div>
-    </div>
+    
+    
+    
+    
+    
+  </main>
+  <div id="checkout-summary" class="p-4 m-4 border rounded-lg shadow-lg">
+    <h2 class="text-2xl font-bold">Resumen de la compra</h2>
+    <p id="total-price" class="text-lg font-semibold">Total: U$D 0</p>
     <div class="m-4">
       <a href="pago.html">
-        <button type="button">
-          Agregar al carrito
+        <button type="button" id='buttonPago'>
+          Continuar al pago
         </button>
-    </div>
-  </main>
+      </div>
+  </div>
+  
     <footer id="footer-placeholder"></footer>
+    <script>
+      $(document).ready(function () {
+        $("#header-placeholder").load("./src/html/header.html");
+        $("#footer-placeholder").load("./src/html/footer.html");
+        var cart = JSON.parse(localStorage.getItem("cart")) || [];
+        if (cart.length === 0) {
+          $("main").html(
+            '<h2 class="text-2xl font-bold">¡No hay cursos en el carrito! Podés encontrar alguno <a href="cursos.html" class="text-2xl">acá</a></h2>'
+          );
+          $("#checkout-summary").remove();
+        }
+
+        cart.forEach(function (course) {
+          console.log(course);
+          var courseCard = `
+          <div class="course-card ${course.type} w-64 h-64 border rounded-lg overflow-hidden shadow-lg m-4">
+            <span id="hours" class="hidden">${course.hours}</span>
+            <span id="profe" class="hidden">${course.profe}</span>
+            <img src="${course.image}" alt="Course Image" class="w-full h-1/2 object-cover" />
+            <h2 class="text-xl font-bold mt-2">${course.title}</h2>
+            <div class="flex justify-end mt-auto">
+              <span id="price" class="text-lg font-semibold">${course.price}</span>
+              <span class="text-lg font-semibold">U$D</span>
+            </div>
+          </div>
+          `;
+          $("main").append(courseCard);
+        });
+
+        $(".course-card").click(function () {
+          var courseTitle = $(this).find("h2").text();
+          var courseTime = $(this).find("#hours").text();
+          var courseProfessor = $(this).find("#profe").text();
+
+          var courseInfoCard = `
+          <div class="course-info-card bg-lightblue-100 p-4 rounded-lg shadow-lg m-4">
+            <h2 class="text-2xl font-bold">Información del curso</h2>
+            <p><strong>Nombre del curso:</strong> ${courseTitle}</p>
+            <p><strong>Tiempo del curso:</strong> ${courseTime} horas</p>
+            <p><strong>Profesor elegido:</strong> ${courseProfessor}</p>
+          </div>
+          `;
+          var button = $("#buttonPago");
+          $("#buttonPago").remove();
+          $(".course-info-card").remove();
+          $("main").append(courseInfoCard);
+          $("main").append(button);
+        });
+
+        var totalPrice = 0;
+        cart.forEach(function (course) {
+          console.log(course.price);
+          course.price = course.price.replace("$", "").replace(/\s/g, "");
+          totalPrice += parseFloat(course.price);
+        });
+
+        $("#total-price").text("Total: U$D " + totalPrice.toFixed(2));
+      });
+    </script>
   </body>
 </html>
 <script>
   $(document).ready(function () {
     $("#header-placeholder").load("./src/html/header.html");
     $("#footer-placeholder").load("./src/html/footer.html");
+    var cart = JSON.parse(localStorage.getItem('cart')) || [];
+    if (cart.length === 0) {
+      $('main').html('<h2 class="text-2xl font-bold">¡No hay cursos en el carrito! Podés encontrar alguno <a href="cursos.html" class="text-2xl font-bold">acá</a></h2>');
+      $('#checkout-summary').remove();
+    }
+
+    cart.forEach(function (course) {
+      console.log(course);
+      var courseCard = `
+      <div class="course-card ${course.type} w-64 h-64 border rounded-lg overflow-hidden shadow-lg m-4">
+      <span id="hours" class="hidden">${course.hours}</span>
+      <span id="profe" class="hidden">${course.profe}</span>
+      <img src="${course.image}" alt="Course Image" class="w-full h-1/2 object-cover" />
+      <h2 class="text-xl font-bold mt-2">${course.title}</h2>
+      <div class="flex justify-end mt-auto">
+        <span id="price" class="text-lg font-semibold">${course.price}</span>
+        <span class="text-lg font-semibold">U$D</span>
+      </div>
+      </div>
+      `;
+      $('main').append(courseCard);
+    });
+
 
     $('.course-card').click(function () {
-      var courseType = $(this).hasClass('online') ? 'Online' : 'Presencial';
+      
       var courseTitle = $(this).find('h2').text();
       var courseRating = $(this).find('.text-yellow-500').html();
       var courseTime = $(this).find('#hours').text();
-      var courseProfessor = 'Saaaaanz';
+      var courseProfessor = $(this).find('#profe').text();
     
       var courseInfoCard = `
       <div class="course-info-card bg-lightblue-100 p-4 rounded-lg shadow-lg m-4">
-      <p><strong>Tipo de curso:</strong> ${courseType}</p>
+      <h2 class="text-2xl font-bold">Información del curso</h2>
       <p><strong>Nombre del curso:</strong> ${courseTitle}</p>
-      <p><strong>Rating del curso:</strong> <span class="text-yellow-500">${courseRating}</span></p>
       <p><strong>Tiempo del curso:</strong> ${courseTime} horas</p>
       <p><strong>Profesor elegido:</strong> ${courseProfessor}</p>
-      </div>
-      `;
-
+      </div>`;
+      
       $('.course-info-card').remove();
       $('main').append(courseInfoCard);
+      
     });
 
+  
+    
+    var totalPrice = 0;
+    cart.forEach(function (course) {
+      console.log(course.price);
+      course.price = course.price.replace('$', '').replace(/\s/g, '');
+      totalPrice += parseFloat(course.price);
+    });
+    
+    $('#total-price').text('Total: U$D ' + totalPrice.toFixed(2));
+
+ 
 
   });
 </script>
