@@ -487,6 +487,7 @@
 
     $(".course-card button").click(function () {
       if (token === null) {
+        localStorage.setItem("goBack", "./cursos.html");
         window.location.href = "./login.html";
         return;
       }
