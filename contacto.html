@@ -175,7 +175,7 @@
       // Validate Motivo
       if (!$("input[name='indicarMotivo']:checked").val()) {
       isValid = false;
-      $("input[name='indicarMotivo']").last().after("<span class='error-message text-red-500'>Por favor, seleccione un motivo.</span>");
+      $("input[name='indicarMotivo']").parent().last().after("<span class='error-message text-red-500'>Por favor, seleccione un motivo.</span>");
       }
 
       // Validate Mensaje
