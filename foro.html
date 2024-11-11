@@ -107,7 +107,7 @@
         $("#footer-placeholder").load("./src/html/footer.html");
 
         var notificationAlreadyInCart = $("<div></div>")
-          .text("Tu cuenta no está habilitada para participar del foro.")
+          .text("Sistema fuera de servicio. Contactate con nosotros para más información.")
           .css({
             position: "fixed",
             top: "100px",
@@ -120,6 +120,7 @@
             zIndex: 1000,
           })
           .appendTo("body");
+         
         $("button").on("click", function () {
           if (!sessionStorage.getItem("token")) {
             localStorage.setItem("goBack", "./foro.html");
