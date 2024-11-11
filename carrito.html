@@ -51,7 +51,7 @@
       totalPrice += parseFloat(course.price);
       var courseCard = `
       <div class="course-card ${course.type} w-64 h-64 border rounded-lg overflow-hidden shadow-lg m-4 relative">
-      <button class="remove-course text-white rounded-full w-6 h-6 flex items-center justify-center absolute top-2 right-2">x</button>
+      <button class="remove-course text-white rounded-full p-2 fa-solid text-white hover:text-indigo-700">x</button>
       <img src="${course.image}" alt="Course Image" class="w-full h-1/2 object-cover mt-2" />
       <span id="hours" class="hidden">${course.hours}</span>
       <span id="profe" class="hidden">${course.profe}</span>
