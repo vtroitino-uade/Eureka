@@ -14,6 +14,7 @@
   <body class="flex flex-col min-h-screen overflow-x-hidden">
     <header id="header-placeholder" class=""></header>
     <main class="flex flex-1 flex-col items-center justify-center m-auto">
+      <h1 id='success' class="text-4xl font-title"></h1>
       <div class="flex flex-col md:flex-row rounded-2xl shadow-2xl p-2">
         <div
           class="flex flex-col justify-between bg-teal-500 rounded-2xl py-10 pl-10 p-20"
@@ -138,5 +139,56 @@
   $(document).ready(function () {
     $("#header-placeholder").load("./src/html/header.html");
     $("#footer-placeholder").load("./src/html/footer.html");
+    $("form").on("submit", function (event) {
+      event.preventDefault();
+      let isValid = true;
+
+      // Clear previous error messages
+      $(".error-message").remove();
+
+      // Validate Nombre
+      if ($("#nombre").val().trim() === "") {
+      isValid = false;
+      $("#nombre").after("<span class='error-message text-red-500'>Por favor, ingrese su nombre.</span>");
+      }
+
+      // Validate Apellido
+      if ($("#apellido").val().trim() === "") {
+      isValid = false;
+      $("#apellido").after("<span class='error-message text-red-500'>Por favor, ingrese su apellido.</span>");
+      }
+
+      // Validate Email
+      const email = $("#email").val().trim();
+      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+      if (email === "" || !emailPattern.test(email)) {
+      isValid = false;
+      $("#email").after("<span class='error-message text-red-500'>Por favor, ingrese un email válido.</span>");
+      }
+
+      // Validate Teléfono
+      if ($("#telefono").val().trim() === "") {
+      isValid = false;
+      $("#telefono").after("<span class='error-message text-red-500'>Por favor, ingrese su teléfono.</span>");
+      }
+
+      // Validate Motivo
+      if (!$("input[name='indicarMotivo']:checked").val()) {
+      isValid = false;
+      $("input[name='indicarMotivo']").last().after("<span class='error-message text-red-500'>Por favor, seleccione un motivo.</span>");
+      }
+
+      // Validate Mensaje
+      if ($("#mensaje").val().trim() === "") {
+      isValid = false;
+      $("#mensaje").after("<span class='error-message text-red-500'>Por favor, ingrese su mensaje.</span>");
+      }
+
+      if (isValid) {
+        $("#success").html("<p class='text-white bg-teal-500 p-4 rounded-md'>¡Tu consulta fue enviada correctamente!</p>");
+        // Clear all fields
+        $("form")[0].reset();
+      }
+    });
   });
 </script>
