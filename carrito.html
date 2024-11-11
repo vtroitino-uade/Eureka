@@ -13,10 +13,40 @@
   </head>
   <body class="flex flex-col min-h-screen overflow-x-hidden">
     <header id="header-placeholder" class=""></header>
+    <div class="w-full m-auto max-w-4xl px-4 pt-10">
+      <div class="flex justify-between items-center mb-8">
+        <div class="flex items-center">
+          <div
+            class="w-10 h-10 flex items-center justify-center rounded-full bg-teal-500 text-white"
+          >
+            1
+          </div>
+          <span class="ml-2 text-teal-500">Carrito</span>
+        </div>
+        <div class="flex-1 h-1 bg-teal-500 mx-2"></div>
+        <div class="flex items-center">
+          <div
+            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-300 text-gray-500"
+          >
+            2
+          </div>
+          <span class="ml-2 text-gray-500">Pago</span>
+        </div>
+        <div class="flex-1 h-1 bg-gray-300 mx-2"></div>
+        <div class="flex items-center">
+          <div
+            class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-300 text-gray-500"
+          >
+            3
+          </div>
+          <span class="ml-2 text-gray-500">Confirmación</span>
+        </div>
+      </div>
+    </div>
     <main
-      class="flex flex-1 flex-col items-center justify-center m-auto"
+      class="flex flex-1 flex-wrap items-center justify-center m-auto"
     ></main>
-    <div id="checkout-summary" class="p-4 m-4 border rounded-lg shadow-lg">
+    <div id="checkout-summary" class="m-auto flex flex-col items-center p-4 mb-10 border rounded-lg shadow-lg">
       <h2 class="text-2xl font-bold">Resumen de la compra</h2>
       <p id="total-price" class="text-lg font-semibold">Total: U$D 0</p>
       <div class="m-4">
