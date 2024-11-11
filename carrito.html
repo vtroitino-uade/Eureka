@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,24 +15,17 @@
     <header id="header-placeholder" class=""></header>
     <main
       class="flex flex-1 flex-col items-center justify-center m-auto"
-    >
-    
-    
-    
-    
-    
-  </main>
-  <div id="checkout-summary" class="p-4 m-4 border rounded-lg shadow-lg">
-    <h2 class="text-2xl font-bold">Resumen de la compra</h2>
-    <p id="total-price" class="text-lg font-semibold">Total: U$D 0</p>
-    <div class="m-4">
-      <a href="pago.html">
-        <button type="button" id='buttonPago'>
-          Continuar al pago
-        </button>
+    ></main>
+    <div id="checkout-summary" class="p-4 m-4 border rounded-lg shadow-lg">
+      <h2 class="text-2xl font-bold">Resumen de la compra</h2>
+      <p id="total-price" class="text-lg font-semibold">Total: U$D 0</p>
+      <div class="m-4">
+        <a href="pago.html">
+          <button type="button" id="buttonPago">Continuar al pago</button>
+        </a>
       </div>
-  </div>
-  
+    </div>
+
     <footer id="footer-placeholder"></footer>
   </body>
 </html>
@@ -40,14 +33,16 @@
   $(document).ready(function () {
     $("#header-placeholder").load("./src/html/header.html");
     $("#footer-placeholder").load("./src/html/footer.html");
-    var cart = JSON.parse(localStorage.getItem('cart')) || [];
+    var cart = JSON.parse(localStorage.getItem("cart")) || [];
     if (cart.length === 0) {
-      $('main').html('<h2 class="text-2xl font-bold">¡No hay cursos en el carrito! Podés encontrar alguno <a href="cursos.html" class="text-2xl font-bold">acá</a></h2>');
-      $('#checkout-summary').remove();
+      $("main").html(
+        '<h2 class="text-2xl font-bold">¡No hay cursos en el carrito! Podés encontrar alguno <a href="cursos.html" class="text-2xl font-bold">acá</a></h2>'
+      );
+      $("#checkout-summary").remove();
     }
     var totalPrice = 0;
     cart.forEach(function (course) {
-      course.price = course.price.replace('$', '').replace(/\s/g, '');
+      course.price = course.price.replace("$", "").replace(/\s/g, "");
       totalPrice += parseFloat(course.price);
       var courseCard = `
       <div class="course-card ${course.type} w-64 h-64 border rounded-lg overflow-hidden shadow-lg m-4 relative">
@@ -62,18 +57,17 @@
       </div>
       </div>
       `;
-      $('main').append(courseCard);
+      $("main").append(courseCard);
     });
 
-    $('#total-price').text('Total: U$D ' + totalPrice.toFixed(2));
+    $("#total-price").text("Total: U$D " + totalPrice.toFixed(2));
 
-    $('.course-card').click(function () {
-      
-      var courseTitle = $(this).find('h2').text();
-      var courseRating = $(this).find('.text-yellow-500').html();
-      var courseTime = $(this).find('#hours').text();
-      var courseProfessor = $(this).find('#profe').text();
-      
+    $(".course-card").click(function () {
+      var courseTitle = $(this).find("h2").text();
+      var courseRating = $(this).find(".text-yellow-500").html();
+      var courseTime = $(this).find("#hours").text();
+      var courseProfessor = $(this).find("#profe").text();
+
       var courseInfoCard = `
       <div class="course-info-card bg-lightblue-100 p-4 rounded-lg shadow-lg m-4">
       <h2 class="text-2xl font-bold">Información del curso</h2>
@@ -81,36 +75,37 @@
       <p><strong>Tiempo del curso:</strong> ${courseTime} horas</p>
       <p><strong>Profesor elegido:</strong> ${courseProfessor}</p>
       </div>`;
-      
-      $('.course-info-card').remove();
-      $('main').append(courseInfoCard);
-      
+
+      $(".course-info-card").remove();
+      $("main").append(courseInfoCard);
     });
 
-    $('.remove-course').click(function (e) {
+    $(".remove-course").click(function (e) {
       e.stopPropagation();
-      var courseCard = $(this).closest('.course-card');
-      var courseTitle = courseCard.find('h2').text();
+      var courseCard = $(this).closest(".course-card");
+      var courseTitle = courseCard.find("h2").text();
       cart = cart.filter(function (course) {
         return course.title !== courseTitle;
       });
 
-      localStorage.setItem('cart', JSON.stringify(cart));
+      localStorage.setItem("cart", JSON.stringify(cart));
       courseCard.remove();
-      totalPrice -= parseFloat(courseCard.find('#price').text());
-      $('#total-price').text('Total: U$D ' + totalPrice.toFixed(2));
+      totalPrice -= parseFloat(courseCard.find("#price").text());
+      $("#total-price").text("Total: U$D " + totalPrice.toFixed(2));
       updateCartCounter();
       if (cart.length === 0) {
-        $('main').html('<h2 class="text-2xl font-bold">¡No hay cursos en el carrito! Podés encontrar alguno <a href="cursos.html" class="text-2xl font-bold">acá</a></h2>');
-        $('#checkout-summary').remove();
+        $("main").html(
+          '<h2 class="text-2xl font-bold">¡No hay cursos en el carrito! Podés encontrar alguno <a href="cursos.html" class="text-2xl font-bold">acá</a></h2>'
+        );
+        $("#checkout-summary").remove();
       }
     });
 
     function updateCartCounter() {
-    var cart = JSON.parse(localStorage.getItem("cart")) || [];
-    var cartCount = cart.length;
-    $("#cart-count").text(cartCount);
-    return cart;
-  }
+      var cart = JSON.parse(localStorage.getItem("cart")) || [];
+      var cartCount = cart.length;
+      $("#cart-count").text(cartCount);
+      return cart;
+    }
   });
 </script>
