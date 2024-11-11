@@ -956,6 +956,10 @@ button:hover,
   height: max-content;
 }
 
+.h-6 {
+  height: 1.5rem;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -998,6 +1002,10 @@ button:hover,
 
 .w-20 {
   width: 5rem;
+}
+
+.w-6 {
+  width: 1.5rem;
 }
 
 .min-w-\[450px\] {
@@ -1226,6 +1234,11 @@ button:hover,
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(250 250 249 / var(--tw-bg-opacity));
+}
+
+.bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
 
 .object-cover {
@@ -1464,6 +1477,15 @@ button:hover,
   color: rgb(234 179 8 / var(--tw-text-opacity));
 }
 
+.text-teal-700 {
+  --tw-text-opacity: 1;
+  color: rgb(15 118 110 / var(--tw-text-opacity));
+}
+
+.underline {
+  text-decoration-line: underline;
+}
+
 .opacity-0 {
   opacity: 0;
 }
@@ -1558,6 +1580,15 @@ button:hover,
   cursor: pointer;
 }
 
+.hover\:border-solid:hover {
+  border-style: solid;
+}
+
+.hover\:border-b-teal-700:hover {
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(15 118 110 / var(--tw-border-opacity));
+}
+
 .hover\:bg-blue-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(29 78 216 / var(--tw-bg-opacity));
@@ -1587,6 +1618,10 @@ button:hover,
   color: rgb(250 250 249 / var(--tw-text-opacity));
 }
 
+.hover\:underline:hover {
+  text-decoration-line: underline;
+}
+
 .hover\:outline:hover {
   outline-style: solid;
 }
@@ -1597,6 +1632,10 @@ button:hover,
 
 .hover\:outline-indigo-700:hover {
   outline-color: #4338ca;
+}
+
+.hover\:outline-teal-700:hover {
+  outline-color: #0f766e;
 }
 
 .focus\:outline-none:focus {
