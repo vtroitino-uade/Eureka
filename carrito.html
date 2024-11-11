@@ -30,7 +30,7 @@
         <button type="button" id='buttonPago'>
           Continuar al pago
         </button>
-      </div>`
+      </div>
   </div>
   
     <footer id="footer-placeholder"></footer>
@@ -77,13 +77,11 @@
       <p><strong>Nombre del curso:</strong> ${courseTitle}</p>
       <p><strong>Tiempo del curso:</strong> ${courseTime} horas</p>
       <p><strong>Profesor elegido:</strong> ${courseProfessor}</p>
-      </div>
-      `;
-      button = $('#buttonPago')
-      $('#buttonPago').remove();
+      </div>`;
+      
       $('.course-info-card').remove();
       $('main').append(courseInfoCard);
-      $('main').append(button);
+      
     });
 
   
