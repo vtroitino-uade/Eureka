@@ -1,5 +1,8 @@
-<nav id="navbar" class="flex items-center justify-between h-auto py-2 px-10">
-  <button class="block md:hidden bg-white text-white" id="menu-button">
+<nav id="navbar" class="flex items-center justify-between h-fit py-2 px-10">
+  <button
+    class="block md:hidden bg-white text-white hover:outline-teal-500 z-50"
+    id="menu-button"
+  >
     <i class="fa-solid fa-bars"></i>
   </button>
   <a id="logo" href="./index.html" class="hidden font-title text-4xl md:flex">
@@ -19,33 +22,58 @@
       <li class="text-center"><a id="faq" href="./faq.html">FAQ</a></li>
       <li class="text-center"><a id="foro" href="./foro.html">Foro</a></li>
     </ul>
-    <div id="auth" class="flex items-center gap-4">
-      <a id="login" href="./login.html">Iniciar Sesion</a>
-      <a id="signin" class="font-normal" href="./signin.html"
-        ><button>Regístrate</button>
-      </a>
-    </div>
-    <div id="user" class="hidden items-center justify-center gap-10">
-      <a id="carrito" href="./carrito.html">
-        <i class="fa-solid fa-cart-shopping"></i>
-        <span
-          id="cart-count"
-            class="bg-white text-black rounded-full w-6 h-6 flex items-center justify-center border border-teal-500"
-          >0</span
-        >
-      </a>
-      <img
-        src="./assets/img/user.png"
-        alt="Foto de perfil del usuario"
-        class="rounded-full size-8"
-      />
-    </div>
+  </div>
+  <div
+    id="dropdown-menu"
+    class="hidden absolute top-0 left-0 w-full bg-white shadow-lg z-40"
+  >
+    <ul class="flex flex-col items-center gap-4 p-4">
+      <li class="text-center">
+        <a id="logo" href="./index.html" class="font-title text-4xl md:flex">
+          E
+        </a>
+      </li>
+      <li class="text-center">
+        <a id="curso" href="./cursos.html">Cursos y Tutores</a>
+      </li>
+      <li class="text-center">
+        <a id="recursos" href="./recursos.html">Recursos</a>
+      </li>
+      <li class="text-center">
+        <a id="contacto" href="./contacto.html">Contacto</a>
+      </li>
+      <li class="text-center"><a id="faq" href="./faq.html">FAQ</a></li>
+      <li class="text-center"><a id="foro" href="./foro.html">Foro</a></li>
+    </ul>
+  </div>
+  <div id="auth" class="flex items-center gap-4 z-50">
+    <a id="login" href="./login.html">Iniciar Sesion</a>
+    <a id="signin" class="font-normal" href="./signin.html"
+      ><button>Regístrate</button>
+    </a>
+  </div>
+  <div id="user" class="hidden items-center justify-center gap-10 z-50">
+    <a id="carrito" href="./carrito.html">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span
+        id="cart-count"
+        class="bg-white text-black rounded-full w-6 h-6 flex items-center justify-center border border-teal-500"
+        >0</span
+      >
+    </a>
+    <img
+      src="./assets/img/user.png"
+      alt="Foto de perfil del usuario"
+      class="rounded-full size-8"
+    />
   </div>
 </nav>
-<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 <script>
   $(document).ready(function () {
     updateCartCounter();
+    $("#menu-button").click(function () {
+      $("#dropdown-menu").toggleClass("hidden");
+    });
 
     const links = document.querySelectorAll("#navbar ul li a");
     const logo = document.getElementById("logo");
@@ -56,6 +84,8 @@
     const login = document.getElementById("login");
     const auth = document.getElementById("auth");
     const user = document.getElementById("user");
+    const auth_h = document.getElementById("auth-h");
+    const user_h = document.getElementById("user-h");
     const foro = document.getElementById("foro");
     const carrito = document.getElementById("carrito");
 
@@ -84,7 +114,15 @@
       auth.classList.add("hidden");
       user.classList.remove("hidden");
       user.classList.add("flex");
+      auth_h.classList.add("hidden");
+      user_h.classList.remove("hidden");
+      user_h.classList.add("flex");
       console.log(token);
+    } else {
+      auth.classList.remove("hidden");
+      user.classList.add("hidden");
+      auth_h.classList.remove("hidden");
+      user_h.classList.add("hidden");
     }
   });
 

@@ -821,6 +821,14 @@ button:hover,
   top: 100%;
 }
 
+.top-16 {
+  top: 4rem;
+}
+
+.bottom-full {
+  bottom: 100%;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -835,6 +843,18 @@ button:hover,
 
 .z-\[10\] {
   z-index: 10;
+}
+
+.z-50 {
+  z-index: 50;
+}
+
+.z-40 {
+  z-index: 40;
+}
+
+.m-0 {
+  margin: 0px;
 }
 
 .m-4 {
@@ -944,10 +964,6 @@ button:hover,
   height: 300px;
 }
 
-.h-auto {
-  height: auto;
-}
-
 .h-fit {
   height: -moz-fit-content;
   height: fit-content;
@@ -1010,6 +1026,10 @@ button:hover,
   min-width: 450px;
 }
 
+.max-w-4xl {
+  max-width: 56rem;
+}
+
 .max-w-lg {
   max-width: 32rem;
 }
@@ -1049,6 +1069,16 @@ button:hover,
 
 .translate-y-1\/2 {
   --tw-translate-y: 50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.-translate-y-full {
+  --tw-translate-y: -100%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.translate-y-full {
+  --tw-translate-y: 100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1195,6 +1225,11 @@ button:hover,
   border-width: 1px;
 }
 
+.border-gray-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+}
+
 .border-teal-500 {
   --tw-border-opacity: 1;
   border-color: rgb(20 184 166 / var(--tw-border-opacity));
@@ -1247,10 +1282,6 @@ button:hover,
   padding: 0.5rem;
 }
 
-.p-20 {
-  padding: 5rem;
-}
-
 .p-4 {
   padding: 1rem;
 }
@@ -1266,11 +1297,6 @@ button:hover,
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
-}
-
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
 }
 
 .px-3 {
@@ -1301,11 +1327,6 @@ button:hover,
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
-}
-
-.py-5 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
 }
 
 .pb-10 {
@@ -1340,10 +1361,6 @@ button:hover,
   padding-top: 2.5rem;
 }
 
-.pt-5 {
-  padding-top: 1.25rem;
-}
-
 .text-left {
   text-align: left;
 }
@@ -1366,9 +1383,20 @@ button:hover,
   line-height: 2.5rem;
 }
 
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+
+.text-p-mobile {
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: 400;
 }
 
 .text-p-sm-desktop {
@@ -1390,18 +1418,6 @@ button:hover,
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-p-desktop {
-  font-size: 1.5rem;
-  line-height: 1.5rem;
-  font-weight: 400;
-}
-
-.text-p-mobile {
-  font-size: 1rem;
-  line-height: 1rem;
-  font-weight: 400;
 }
 
 .font-bold {
@@ -1613,6 +1629,14 @@ button:hover,
   outline-color: #4338ca;
 }
 
+.hover\:outline-teal-700:hover {
+  outline-color: #0f766e;
+}
+
+.hover\:outline-teal-500:hover {
+  outline-color: #14b8a6;
+}
+
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -1620,6 +1644,17 @@ button:hover,
 
 .focus\:outline-teal-700:focus {
   outline-color: #0f766e;
+}
+
+.focus\:ring-2:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.focus\:ring-teal-500:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(20 184 166 / var(--tw-ring-opacity));
 }
 
 @media (min-width: 640px) {
@@ -1658,6 +1693,11 @@ button:hover,
   .sm\:p-6 {
     padding: 1.5rem;
   }
+
+  .sm\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1667,6 +1707,10 @@ button:hover,
 
   .md\:m-0 {
     margin: 0px;
+  }
+
+  .md\:m-auto {
+    margin: auto;
   }
 
   .md\:flex {
@@ -1709,6 +1753,11 @@ button:hover,
     overflow-x: auto;
   }
 
+  .md\:px-20 {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
   .md\:text-left {
     text-align: left;
   }
@@ -1725,6 +1774,14 @@ button:hover,
 }
 
 @media (min-width: 1160px) {
+  .md-2\:flex-row {
+    flex-direction: row;
+  }
+
+  .md-2\:p-4 {
+    padding: 1rem;
+  }
+
   .md-2\:text-p-desktop {
     font-size: 1.5rem;
     line-height: 1.5rem;
