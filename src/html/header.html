@@ -64,8 +64,20 @@
     <img
       src="./assets/img/user.png"
       alt="Foto de perfil del usuario"
-      class="rounded-full size-8"
+      class="rounded-full size-8 cursor-pointer"
     />
+  </div>
+  <div
+    id="logout-dropdown"
+    class="hidden absolute top-[60px] right-10 w-40 bg-white shadow-lg z-40"
+  >
+    <ul class="flex flex-col items-center gap-4 p-4">
+      <li class="text-center">
+        <a id="logout-button" class="text-red-500 cursor-pointer"
+          >Cerrar Sesión</a
+        >
+      </li>
+    </ul>
   </div>
 </nav>
 <script>
@@ -74,7 +86,21 @@
     $("#menu-button").click(function () {
       $("#dropdown-menu").toggleClass("hidden");
     });
+    $(document).ready(function () {
+      $("#user img").click(function () {
+        $("#logout-dropdown").toggleClass("hidden");
+      });
 
+      $("#logout-button").click(function () {
+        sessionStorage.removeItem("token");
+        window.location.href = "./index.html";
+      });
+    });
+    $(window).resize(function () {
+      if ($(window).width() > 768) {
+        $("#dropdown-menu").addClass("hidden");
+      }
+    });
     const links = document.querySelectorAll("#navbar ul li a");
     const logo = document.getElementById("logo");
     const curso = document.getElementById("curso");
