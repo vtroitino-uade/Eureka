@@ -14,7 +14,10 @@
   <body class="flex flex-col min-h-screen overflow-x-hidden">
     <header id="header-placeholder" class=""></header>
     <main class="flex flex-grow flex-col bg-[#F2FEFB]">
-      <section id="inicio" class="flex flex-col gap-20 bg-white p-10">
+      <section
+        id="inicio"
+        class="flex flex-col gap-10 sm:gap-20 bg-white p-4 sm:p-10"
+      >
         <h2 class="text-center">
           Bienvenido al
           <span class="relative text-teal-500">
@@ -26,41 +29,70 @@
             />
           </span>
         </h2>
-        <div class="flex flex-col gap-4">
+        <div class="flex m-auto flex-col gap-2 sm:gap-4">
           <h3>Comparte tus ideas y resuelve tus dudas</h3>
         </div>
       </section>
-      <section class="h-max mt-10">
+      <section class="h-max md:w-full md:m-0 xl:m-auto xl:w-3/4 mt-4 sm:mt-10 p-4 sm:p-10">
         <div class="flex flex-col gap-4">
-          <div class="bg-white p-6 rounded-lg shadow-xl">
-            <h4 class="text-xl font-bold">Tema 1: Introducción a HTML</h4>
-            <p class="text-gray-500">Publicado por Usuario1</p>
-            <p class="mt-4">¿Alguien puede explicar cómo funcionan las etiquetas en HTML?</p>
-            <button class="mt-4">Responder</button>
+          <div class="bg-white p-4 sm:p-6 rounded-lg shadow-xl">
+            <p class="font-bold mb-2 sm:mb-4">Introducción a HTML</p>
+            <p class="text-gray-500">Publicado por Celeste</p>
+            <p class="mt-2 sm:mt-4">
+              ¿Alguien puede explicar cómo funcionan las etiquetas en HTML?
+            </p>
+            <p class="mt-2 sm:mt-4 pl-10 text-gray-700">
+              Las etiquetas en HTML son elementos que se utilizan para definir
+              la estructura y el contenido de una página web. Cada etiqueta
+              tiene un propósito específico, como definir un encabezado, un
+              párrafo, una imagen, etc.
+            </p>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-xl">
-            <h4 class="text-xl font-bold">Tema 2: CSS Flexbox</h4>
-            <p class="text-gray-500">Publicado por Usuario2</p>
-            <p class="mt-4">¿Cómo puedo centrar un div usando Flexbox?</p>
-            <button class="mt-4">Responder</button>
+          <div class="bg-white p-4 sm:p-6 rounded-lg shadow-xl">
+            <p class="font-bold mb-2 sm:mb-4">CSS Flexbox</p>
+            <p class="text-gray-500">Publicado por Pedro</p>
+            <p class="mt-2 sm:mt-4">
+              ¿Cómo puedo centrar un div usando Flexbox?
+            </p>
+            <p class="mt-2 sm:mt-4 pl-10 text-gray-700">
+              Para centrar un div usando Flexbox, puedes utilizar las
+              propiedades `display: flex`, `justify-content: center` y
+              `align-items: center` en el contenedor del div.
+            </p>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-xl">
-            <h4 class="text-xl font-bold">Tema 3: JavaScript Básico</h4>
-            <p class="text-gray-500">Publicado por Usuario3</p>
-            <p class="mt-4">¿Cuál es la diferencia entre var, let y const en JavaScript?</p>
-            <button class="mt-4">Responder</button>
+          <div class="bg-white p-4 sm:p-6 rounded-lg shadow-xl">
+            <p class="font-bold mb-2 sm:mb-4">JavaScript Básico</p>
+            <p class="text-gray-500">Publicado por Maraina</p>
+            <p class="mt-2 sm:mt-4">
+              ¿Cuál es la diferencia entre var, let y const en JavaScript?
+            </p>
+            <p class="mt-2 sm:mt-4 pl-10 text-gray-700">
+              `var` tiene un alcance de función, mientras que `let` y `const`
+              tienen un alcance de bloque. `const` se utiliza para declarar
+              variables que no se pueden reasignar.
+            </p>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-xl">
-            <h4 class="text-xl font-bold">Tema 4: React</h4>
-            <p class="text-gray-500">Publicado por Usuario4</p>
-            <p class="mt-4">¿Cómo puedo manejar el estado en un componente funcional en React?</p>
-            <button class="mt-4">Responder</button>
+          <div class="bg-white p-4 sm:p-6 rounded-lg shadow-xl">
+            <p class="font-bold mb-2 sm:mb-4">React</p>
+            <p class="text-gray-500">Publicado por Carlos</p>
+            <p class="mt-2 sm:mt-4">
+              ¿Cómo puedo manejar el estado en un componente funcional en React?
+            </p>
+            <p class="mt-2 sm:mt-4 pl-10 text-gray-700">
+              Puedes manejar el estado en un componente funcional en React
+              utilizando el hook `useState`.
+            </p>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-xl">
-            <h4 class="text-xl font-bold">Tema 5: Node.js</h4>
-            <p class="text-gray-500">Publicado por Usuario5</p>
-            <p class="mt-4">¿Qué es el event loop en Node.js?</p>
-            <button class="mt-4">Responder</button>
+          <div class="bg-white p-4 sm:p-6 rounded-lg shadow-xl lg:">
+            <p class="font-bold mb-2 sm:mb-4">Node.js</p>
+            <p class="text-gray-500">Publicado por John Doe</p>
+            <p class="mt-2 sm:mt-4">¿Qué es el event loop en Node.js?</p>
+            <p class="mt-2 sm:mt-4 pl-10 text-gray-700">
+              El event loop en Node.js es un mecanismo que permite a Node.js
+              realizar operaciones no bloqueantes, a pesar de que JavaScript es
+              de un solo hilo. Gestiona las operaciones de entrada/salida y las
+              tareas asíncronas.
+            </p>
           </div>
         </div>
       </section>

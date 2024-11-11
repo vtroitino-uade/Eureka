@@ -596,9 +596,9 @@ h1 {
 
 h2 {
   font-family: PublicSans, system-ui;
-  font-size: 1.5rem;
-  line-height: 1.5rem;
-  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 600;
 }
 
 @media (min-width: 1160px) {
@@ -871,10 +871,6 @@ button:hover,
   margin-left: 2.5rem;
 }
 
-.mt-10 {
-  margin-top: 2.5rem;
-}
-
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -986,6 +982,10 @@ button:hover,
   width: 8rem;
 }
 
+.w-52 {
+  width: 13rem;
+}
+
 .w-6 {
   width: 1.5rem;
 }
@@ -1004,18 +1004,6 @@ button:hover,
 
 .w-full {
   width: 100%;
-}
-
-.w-60 {
-  width: 15rem;
-}
-
-.w-40 {
-  width: 10rem;
-}
-
-.w-52 {
-  width: 13rem;
 }
 
 .min-w-\[450px\] {
@@ -1404,6 +1392,18 @@ button:hover,
   line-height: 1rem;
 }
 
+.text-p-desktop {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+}
+
+.text-p-mobile {
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: 400;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -1623,24 +1623,40 @@ button:hover,
 }
 
 @media (min-width: 640px) {
+  .sm\:mb-4 {
+    margin-bottom: 1rem;
+  }
+
+  .sm\:mt-10 {
+    margin-top: 2.5rem;
+  }
+
+  .sm\:mt-4 {
+    margin-top: 1rem;
+  }
+
   .sm\:w-64 {
     width: 16rem;
-  }
-
-  .sm\:items-end {
-    align-items: flex-end;
-  }
-
-  .sm\:items-center {
-    align-items: center;
   }
 
   .sm\:justify-start {
     justify-content: flex-start;
   }
 
-  .sm\:justify-center {
-    justify-content: center;
+  .sm\:gap-20 {
+    gap: 5rem;
+  }
+
+  .sm\:gap-4 {
+    gap: 1rem;
+  }
+
+  .sm\:p-10 {
+    padding: 2.5rem;
+  }
+
+  .sm\:p-6 {
+    padding: 1.5rem;
   }
 }
 
@@ -1649,12 +1665,20 @@ button:hover,
     grid-column: span 2 / span 2;
   }
 
+  .md\:m-0 {
+    margin: 0px;
+  }
+
   .md\:flex {
     display: flex;
   }
 
   .md\:hidden {
     display: none;
+  }
+
+  .md\:w-full {
+    width: 100%;
   }
 
   .md\:grid-cols-2 {
@@ -1697,6 +1721,24 @@ button:hover,
   .md\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 1160px) {
+  .md-2\:text-p-desktop {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:m-auto {
+    margin: auto;
+  }
+
+  .xl\:w-3\/4 {
+    width: 75%;
   }
 }
 

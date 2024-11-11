@@ -22,7 +22,7 @@
     @apply font-title text-h1-mobile md-2:text-h1-desktop;
   }
   h2 {
-    @apply font-public-sans text-h3-mobile md-2:text-h2-desktop;
+    @apply font-public-sans text-h2-mobile md-2:text-h2-desktop;
   }
   h3 {
     @apply font-public-sans text-h3-mobile md-2:text-h3-desktop;
