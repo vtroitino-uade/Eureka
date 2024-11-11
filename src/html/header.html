@@ -39,7 +39,10 @@
 </nav>
 <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 <script>
-  const links = document.querySelectorAll("#navbar ul li a");
+  $(document).ready(function () {
+    updateCartCounter();
+
+    const links = document.querySelectorAll("#navbar ul li a");
   const logo = document.getElementById("logo");
   const curso = document.getElementById("curso");
   const recursos = document.getElementById("recursos");
@@ -77,9 +80,9 @@
     user.classList.add("flex");
     console.log(token);
   }
-  $(document).ready(function () {
-    updateCartCounter();
+  
   });
+ 
   
   function updateCartCounter() {
     var cart = JSON.parse(localStorage.getItem('cart')) || [];
