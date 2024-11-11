@@ -303,7 +303,13 @@
       notification.fadeIn().delay(2000).fadeOut();
     }
 
+    token = sessionStorage.getItem('token');
+
     $('.course-card button').click(function () {
+      if (token === null) {
+        window.location.href = './login.html';
+        return;
+      }
       var cart = JSON.parse(localStorage.getItem('cart')) || [];
       var courseCard = $(this).closest('.course-card');
       var courseInfo = {
