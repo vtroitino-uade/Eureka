@@ -19,16 +19,16 @@
     @apply box-border font-public-sans text-black;
   }
   h1 {
-    @apply font-title text-h1-mobile md:text-h1-desktop;
+    @apply font-title text-h1-mobile md-2:text-h1-desktop;
   }
   h2 {
-    @apply font-public-sans text-h3-mobile md:text-h2-desktop;
+    @apply font-public-sans text-h3-mobile md-2:text-h2-desktop;
   }
   h3 {
-    @apply font-public-sans text-h3-mobile md:text-h3-desktop;
+    @apply font-public-sans text-h3-mobile md-2:text-h3-desktop;
   }
   p {
-    @apply font-public-sans text-p-mobile md:text-p-desktop;
+    @apply font-public-sans text-p-mobile md-2:text-p-desktop;
   }
   a {
     @apply text-gray-500 font-semibold text-sm hover:text-teal-500 md:text-base;
