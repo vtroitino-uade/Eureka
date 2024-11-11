@@ -13,81 +13,80 @@
   </head>
   <body class="flex flex-col min-h-screen overflow-x-hidden">
     <header id="header-placeholder" class=""></header>
-    <main class="flex flex-1 flex-col items-center justify-center m-auto">
-      <div class="flex flex-col md:flex-row rounded-2xl shadow-2xl p-2">
-        <div
-          class="flex flex-col justify-between bg-teal-500 rounded-2xl py-10 pl-10 p-20"
-        >
+    <main class="flex flex-1 flex-col items-center justify-center m-0 md:m-auto p-2 md-2:p-4">
+      <h1 id='success' class="text-4xl font-title mb-4"></h1>
+      <div class="flex flex-col md-2:flex-row rounded-2xl shadow-2xl p-2 w-full max-w-4xl">
+        <div class="flex flex-col gap-10 justify-between bg-teal-500 rounded-2xl py-10 px-4 sm:px-10 md:px-20">
           <div class="flex flex-col gap-4">
             <p class="text-white">¿Deseas contactarnos?</p>
             <p class="text-p-sm-desktop">Escribe algo para comenzar el chat!</p>
           </div>
           <div class="flex flex-col gap-10 relative">
-            <div class="flex gap-4">
+            <div class="flex gap-4 items-center">
               <div class="flex items-center justify-center size-4">
-                <i class="fa-solid fa-phone"></i>
+                <i class="fa-solid fa-phone "></i>
               </div>
-              <p class="text-p-sm-desktop">+1 012 3456 789</p>
+              <p class="text-p-sm-desktop ">+1 012 3456 789</p>
             </div>
-            <div class="flex gap-4">
+            <div class="flex gap-4 items-center">
               <div class="flex items-center justify-center size-4">
-                <i class="fa-solid fa-envelope"></i>
+                <i class="fa-solid fa-envelope "></i>
               </div>
-              <p class="text-p-sm-desktop">eureka@gmail.com</p>
+              <p class="text-p-sm-desktop ">eureka@gmail.com</p>
             </div>
-            <div class="flex gap-4">
+            <div class="flex gap-4 items-center">
               <div class="flex items-center justify-center size-4">
-                <i class="fa-solid fa-location-dot" class="px-2"></i>
+                <i class="fa-solid fa-location-dot "></i>
               </div>
-              <p class="text-p-sm-desktop">Humboldt 2123</p>
+              <p class="text-p-sm-desktop ">Humboldt 2123</p>
             </div>
           </div>
-          <h1 class="text-center">E</h1>
+          <h1 class="text-center  text-6xl">E</h1>
         </div>
-        <form action="">
-          <div class="flex px-10 pt-10 gap-4">
-            <div class="flex flex-col gap-4">
+        <form class="flex flex-col gap-4 p-4 sm:p-10 w-full" action="">
+          <div class="flex flex-col md:flex-row gap-4">
+            <div class="flex flex-col gap-4 w-full">
               <label for="nombre">Nombre</label>
               <input
-                class="p-2 rounded-md"
+                class="p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-500"
                 type="text"
                 name="nombre"
                 id="nombre"
               />
             </div>
-            <div class="flex flex-col gap-4">
+            <div class="flex flex-col gap-4 w-full">
               <label for="apellido">Apellido</label>
               <input
-                class="p-2 rounded-md"
+                class="p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-500"
                 type="text"
                 name="apellido"
                 id="apellido"
               />
             </div>
           </div>
-          <div class="flex px-10 py-5 gap-4">
-            <div class="flex flex-col gap-4">
+          <div class="flex flex-col md:flex-row gap-4">
+            <div class="flex flex-col gap-4 w-full">
               <label for="email">Email</label>
               <input
-                class="p-2 rounded-md"
+                class="p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-500"
                 type="email"
                 name="email"
                 id="email"
               />
             </div>
-            <div class="flex flex-col gap-4">
-              <label for="apellido">Teléfono</label>
+            <div class="flex flex-col gap-4 w-full">
+              <label for="telefono">Teléfono</label>
               <input
-                class="p-2 rounded-md [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                class="p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-500 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                 type="number"
                 name="telefono"
                 id="telefono"
               />
             </div>
           </div>
-          <div class="flex flex-col px-10 gap-4">
+          <div class="flex flex-col gap-4">
             <label>Motivo</label>
-            <div class="flex gap-4">
+            <div class="flex flex-wrap gap-4">
               <div>
                 <input
                   type="radio"
@@ -117,26 +116,87 @@
               </div>
             </div>
           </div>
-          <div class="flex flex-col gap-4 px-10 pb-10 pt-5">
+          <div class="flex flex-col gap-4">
             <label for="mensaje">Mensaje</label>
             <textarea
-              class="resize-none p-2 rounded-md"
+              class="resize-none p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-500"
               name="mensaje"
               id="mensaje"
               cols="30"
               rows="10"
             ></textarea>
-            <input type="submit" value="Enviar mensaje" class="outline-none" />
+            <input
+              type="submit"
+              value="Enviar mensaje"
+              class="p-2 rounded-md bg-teal-500 text-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-teal-500"
+            />
           </div>
         </form>
       </div>
     </main>
     <footer id="footer-placeholder"></footer>
+    <script>
+      $(document).ready(function () {
+        $("#header-placeholder").load("./src/html/header.html");
+        $("#footer-placeholder").load("./src/html/footer.html");
+        gratis = localStorage.getItem('gratis');
+        if(gratis){
+          $("#success").html("<p class='text-white bg-teal-500 p-4 rounded-md'>"+gratis+"</p>");
+          localStorage.removeItem('gratis');
+        }
+        $("form").on("submit", function (event) {
+          event.preventDefault();
+          let isValid = true;
+
+          // Clear previous error messages
+          $(".error-message").remove();
+
+          // Validate Nombre
+          if ($("#nombre").val().trim() === "") {
+            isValid = false;
+            $("#nombre").after("<span class='error-message text-red-500'>Por favor, ingrese su nombre.</span>");
+          }
+
+          // Validate Apellido
+          if ($("#apellido").val().trim() === "") {
+            isValid = false;
+            $("#apellido").after("<span class='error-message text-red-500'>Por favor, ingrese su apellido.</span>");
+          }
+
+          // Validate Email
+          const email = $("#email").val().trim();
+          const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+          if (email === "" || !emailPattern.test(email)) {
+            isValid = false;
+            $("#email").after("<span class='error-message text-red-500'>Por favor, ingrese un email válido.</span>");
+          }
+
+          // Validate Teléfono
+          if ($("#telefono").val().trim() === "") {
+            isValid = false;
+            $("#telefono").after("<span class='error-message text-red-500'>Por favor, ingrese su teléfono.</span>");
+          }
+
+          // Validate Motivo
+          if (!$("input[name='indicarMotivo']:checked").val()) {
+            isValid = false;
+            $("input[name='indicarMotivo']").parent().last().after("<span class='error-message text-red-500'>Por favor, seleccione un motivo.</span>");
+          }
+
+          // Validate Mensaje
+          if ($("#mensaje").val().trim() === "") {
+            isValid = false;
+            $("#mensaje").after("<span class='error-message text-red-500'>Por favor, ingrese su mensaje.</span>");
+          }
+
+          if (isValid) {
+            $("#success").html("<p class='text-white bg-teal-500 p-4 rounded-md'>¡Tu consulta fue enviada correctamente!</p>");
+            // Clear all fields
+            $("form")[0].reset();
+          }
+
+        });
+      });
+    </script>
   </body>
 </html>
-<script>
-  $(document).ready(function () {
-    $("#header-placeholder").load("./src/html/header.html");
-    $("#footer-placeholder").load("./src/html/footer.html");
-  });
-</script>

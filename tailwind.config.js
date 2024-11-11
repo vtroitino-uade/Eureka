@@ -3,6 +3,10 @@ module.exports = {
   content: ["./src/**/*.{html,js}", "./*.html"],
   theme: {
     extend: {
+      screens: {
+        "sm-2": "880px",
+        "md-2": "1160px",
+      },
       colors: {
         black: "#1c1c19",
         white: "#fafaf9",
@@ -22,7 +26,10 @@ module.exports = {
         "p-desktop": ["1.5rem", { lineHeight: "1.5rem", fontWeight: "400" }],
         "p-mobile": ["1rem", { lineHeight: "1rem", fontWeight: "400" }],
         "p-sm-desktop": ["1rem", { lineHeight: "1rem", fontWeight: "400" }],
-        "p-sm-mobile": ["0.25rem", { lineHeight: "0.25rem", fontWeight: "400" }],
+        "p-sm-mobile": [
+          "0.25rem",
+          { lineHeight: "0.25rem", fontWeight: "400" },
+        ],
       },
     },
   },

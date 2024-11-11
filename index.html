@@ -15,41 +15,56 @@
     <header id="header-placeholder" class=""></header>
     <main class="flex flex-1 flex-col bg-[#F2FEFB]">
       <section
-        class="grid gap-x-40 gap-y-20 pt-10 text-center h-max md:grid-cols-2"
+        class="pl-0 grid gap-x-40 gap-y-20 pt-10 text-center h-max md-2:pl-20 md-2:grid-cols-2"
       >
-        <div class="flex items-center justify-end gap-12 z-[10]">
-          <div class="flex flex-col h-full justify-evenly">
-            <div class="flex flex-col gap-10 text-left relative">
+        <div
+          class="flex items-center justify-center md-2:justify-end gap-12 z-[10]"
+        >
+          <div class="flex gap-10 flex-col h-full justify-evenly">
+            <div class="flex flex-col gap-4 md-2:gap-10 text-left relative">
               <img
                 class="absolute left-0 z-[-1] -translate-x-1/3"
                 src="./assets/svg/circles.svg"
                 alt=""
               />
-              <h1>¡Eureka!</h1>
-              <p>¡Tu éxito, nuestra misión!</p>
+              <h1 class="text-center md-2:text-left">¡Eureka!</h1>
+              <p class="text-center md-2:text-left">
+                ¡Tu éxito, nuestra misión!
+              </p>
             </div>
-            <div class="flex gap-7 justify-start">
-              <button class="">¡Comencemos!</button>
-              <button class="bg-white text-black">Prueba gratis</button>
+            <div class="flex gap-7 justify-center md-2:justify-start">
+              <button id="comencemos">¡Comencemos!</button>
+              <button id="gratis" class="bg-white text-black">
+                Prueba gratis
+              </button>
             </div>
-            <div class="flex gap-4">
-              <p class="text-p-sm-desktop">Publico general</p>
-              <p class="text-p-sm-desktop">Carreras especificas</p>
-              <p class="text-p-sm-desktop">Pensamiento crítico</p>
+            <div class="flex flex-col items-center md:flex-row gap-4">
+              <div class="flex gap-2 items-center">
+                <i class="fa-solid fa-people-group"></i>
+                <p class="text-p-sm-desktop">Publico general</p>
+              </div>
+              <div class="flex gap-2 items-center">
+                <p class="text-p-sm-desktop"></p>
+                <i class="fa-solid fa-suitcase"></i>Carreras especificas
+              </div>
+              <div class="flex gap-2 items-center">
+                <p class="text-p-sm-desktop"></p>
+                <i class="fa-solid fa-lightbulb"></i>Pensamiento crítico
+              </div>
             </div>
           </div>
         </div>
-        <div class="flex items-center justify-start">
+        <div class="flex items-center justify-center md-2:justify-start">
           <div
-            class="z-10 size-[440px] rounded-full bg-teal-500 outline outline-1 outline-teal-500 relative"
+            class="z-10 size-[250px] md-2:size-[440px] rounded-full bg-teal-500 outline outline-1 outline-teal-500 relative"
           >
             <div
-              class="z-[-1] size-[440px] rounded-full outline outline-1 outline-teal-500 absolute -translate-x-5 -translate-y-5"
+              class="z-[-1] size-[250px] md-2:size-[440px] rounded-full outline outline-1 outline-teal-500 absolute -translate-x-5 -translate-y-5"
             ></div>
             <img
-              class="absolute z-[-1] right-0 bottom-0 translate-x-1/2 translate-y-1/2"
+              class="absolute right-0 bottom-0 translate-x-1/2 translate-y-1/2"
               src="./assets/svg/circles.svg"
-              alt=""
+              alt="Circulos decorativos"
             />
             <div
               class="z-20 flex items-center gap-6 p-4 outline outline-1 outline-teal-500 rounded-xl bg-gray-300 absolute -translate-x-1/2 bottom-1/2 shadow-xl"
@@ -59,13 +74,13 @@
               >
                 <i class="fa-solid fa-laptop fa-lg text-white"></i>
               </div>
-              <div class="flex flex-col gap-2 text-left">
+              <div class="flex w-20 md-2:size-auto flex-col gap-2 text-left">
                 <p class="font-bold">2K+</p>
                 <span>Videos informativos</span>
               </div>
             </div>
             <div
-              class="z-20 flex items-center gap-6 p-4 outline outline-1 outline-teal-500 rounded-xl bg-gray-300 absolute right-0 bottom-0 shadow-xl"
+              class="z-20 flex items-center gap-6 p-4 outline outline-1 outline-teal-500 rounded-xl bg-gray-300 absolute right-4 -bottom-10 md-2:right-0 md-2:bottom-0 shadow-xl"
             >
               <div
                 class="flex items-center justify-center size-12 bg-teal-500 rounded-xl"
@@ -78,28 +93,30 @@
               </div>
             </div>
             <div
-              class="z-20 flex flex-col items-center gap-6 p-4 outline outline-1 outline-teal-500 rounded-xl bg-gray-300 absolute top-0 -right-12 shadow-xl"
+              class="z-20 w-20 md-2:size-auto flex flex-col items-center gap-6 p-4 outline outline-1 outline-teal-500 rounded-xl bg-gray-300 absolute top-0 -right-12 shadow-xl"
             >
-              <div class="flex items-center justify-center size-[5rem]">
+              <div
+                class="flex items-center justify-center size-10 md-2:size-20"
+              >
                 <img src="./assets/svg/progress-circle.svg" alt="" />
               </div>
               <div class="flex flex-col gap-2 text-left">
                 <p class="text-center font-bold">5K+</p>
-                <span>Cursos en línea</span>
+                <span class="text-center">Cursos en línea</span>
               </div>
             </div>
             <div
-              class="z-10 size-[440px] rounded-full bg-teal-500 outline outline-1 outline-teal-500 overflow-hidden relative"
+              class="z-10 size-[250px] md-2:size-[440px] rounded-full bg-teal-500 outline outline-1 outline-teal-500 overflow-hidden relative"
             >
               <img
-                class="absolute bottom-0 left-1/3 -translate-x-1/3"
+                class="absolute h-4/5 md-2:size-auto bottom-0 left-1/3 -translate-x-1/3"
                 src="./assets/img/estudiante_mujer.png"
                 alt="Mujer con carpetas en la mano levantando el pulgar derecho"
               />
             </div>
           </div>
         </div>
-        <div class="m-auto md:col-span-2">
+        <div class="m-auto px-20 md-2:col-span-2">
           <div class="flex flex-wrap items-center justify-center gap-12">
             <div class="text-left">
               <p class="text-teal-500 font-bold">250+</p>
@@ -194,11 +211,11 @@
           </div>
         </div>
       </section>
-      <section class="m-auto py-20 text-center h-max">
+      <section class="m-auto p-20 text-center h-max">
         <div
-          class="flex flex-col gap-4 p-4 items-center justify-center outline outline-teal-500 shadow-md rounded-3xl w-[1000px] h-[300px]"
+          class="flex flex-col gap-4 p-4 items-center justify-center outline outline-teal-500 shadow-md rounded-3xl w-full max-w-[1000px] h-auto md:h-[300px]"
         >
-          <p>
+          <p class="px-4 md:px-0">
             En nuestro instituto, ofrecemos clases personalizadas diseñadas para
             estudiantes universitarios de 18 a 25 años que buscan reforzar sus
             conocimientos académicos. Sabemos que cada estudiante tiene sus
@@ -206,7 +223,7 @@
             métodos de enseñanza para ser flexibles y accesibles, ajustándonos a
             las necesidades de cada alumno.
           </p>
-          <p>
+          <p class="px-4 md:px-0">
             Nuestras clases abarcan una amplia gama de materias y están pensadas
             para mejorar las habilidades de estudio y comprensión de los
             estudiantes, brindándoles un apoyo constante en su camino académico.
@@ -320,5 +337,22 @@
   $(document).ready(function () {
     $("#header-placeholder").load("./src/html/header.html");
     $("#footer-placeholder").load("./src/html/footer.html");
+
+    token = sessionStorage.getItem("token");
+    $("#comencemos").on("click", function () {
+      if (token === null) {
+        window.location.href = "./login.html";
+      } else {
+        window.location.href = "./cursos.html";
+      }
+    });
+
+    $("#gratis").on("click", function () {
+      localStorage.setItem(
+        "gratis",
+        "¡Escribinos indicando que buscas empezar tu curso gratis para recibir un cupón exclusivo!"
+      );
+      window.location.href = "./contacto.html";
+    });
   });
 </script>
