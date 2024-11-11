@@ -27,6 +27,7 @@
     <div id="user" class="hidden items-center justify-center gap-10">
       <a id="carrito" href="./carrito.html">
         <i class="fa-solid fa-cart-shopping"></i>
+        <span id="cart-count" class="bg-red-500 text-black rounded-full w-6 h-6 flex items-center justify-center">0</span>
       </a>
       <img
         src="./assets/img/user.png"
@@ -75,5 +76,15 @@
     user.classList.remove("hidden");
     user.classList.add("flex");
     console.log(token);
+  }
+  $(document).ready(function () {
+    updateCartCounter();
+  });
+  
+  function updateCartCounter() {
+    var cart = JSON.parse(localStorage.getItem('cart')) || [];
+    var cartCount = cart.length;
+    $('#cart-count').text(cartCount);
+    return cart;
   }
 </script>
