@@ -17,6 +17,7 @@
         <a id="contacto" href="./contacto.html">Contacto</a>
       </li>
       <li class="text-center"><a id="faq" href="./faq.html">FAQ</a></li>
+      <li class="text-center"><a id="foro" href="./foro.html">Foro</a></li>
     </ul>
     <div id="auth" class="flex items-center gap-4">
       <a id="login" href="./login.html">Iniciar Sesion</a>
@@ -27,7 +28,11 @@
     <div id="user" class="hidden items-center justify-center gap-10">
       <a id="carrito" href="./carrito.html">
         <i class="fa-solid fa-cart-shopping"></i>
-        <span id="cart-count" class="bg-red-500 text-black rounded-full w-6 h-6 flex items-center justify-center">0</span>
+        <span
+          id="cart-count"
+          class="bg-red-500 text-black rounded-full w-6 h-6 flex items-center justify-center"
+          >0</span
+        >
       </a>
       <img
         src="./assets/img/user.png"
@@ -43,51 +48,50 @@
     updateCartCounter();
 
     const links = document.querySelectorAll("#navbar ul li a");
-  const logo = document.getElementById("logo");
-  const curso = document.getElementById("curso");
-  const recursos = document.getElementById("recursos");
-  const contacto = document.getElementById("contacto");
-  const faq = document.getElementById("faq");
-  const login = document.getElementById("login");
-  const auth = document.getElementById("auth");
-  const user = document.getElementById("user");
-  const carrito = document.getElementById("carrito");
+    const logo = document.getElementById("logo");
+    const curso = document.getElementById("curso");
+    const recursos = document.getElementById("recursos");
+    const contacto = document.getElementById("contacto");
+    const faq = document.getElementById("faq");
+    const login = document.getElementById("login");
+    const auth = document.getElementById("auth");
+    const user = document.getElementById("user");
+    const foro = document.getElementById("foro");
+    const carrito = document.getElementById("carrito");
 
-  links.forEach((link) => link.classList.remove("text-teal-500"));
+    links.forEach((link) => link.classList.remove("text-teal-500"));
 
-  const path = window.location.pathname;
+    const path = window.location.pathname;
 
-  if (path.includes("login.html")) {
-    login.classList.add("text-teal-500");
-  } else if (path.includes("recursos.html")) {
-    recursos.classList.add("text-teal-500");
-  } else if (path.includes("cursos.html")) {
-    curso.classList.add("text-teal-500");
-  } else if (path.includes("contacto.html")) {
-    contacto.classList.add("text-teal-500");
-  } else if (path.includes("faq.html")) {
-    faq.classList.add("text-teal-500");
-  } else if (path.includes("carrito.html")) {
-    carrito.classList.add("text-teal-500");
-  } else {
-    logo.classList.add("text-teal-500");
-  }
+    if (path.includes("login.html")) {
+      login.classList.add("text-teal-500");
+    } else if (path.includes("recursos.html")) {
+      recursos.classList.add("text-teal-500");
+    } else if (path.includes("cursos.html")) {
+      curso.classList.add("text-teal-500");
+    } else if (path.includes("contacto.html")) {
+      contacto.classList.add("text-teal-500");
+    } else if (path.includes("faq.html")) {
+      faq.classList.add("text-teal-500");
+    } else if (path.includes("foro.html")) {
+      foro.classList.add("text-teal-500");
+    } else {
+      logo.classList.add("text-teal-500");
+    }
 
-  const token = sessionStorage.getItem("token");
-  if (token !== null) {
-    auth.classList.add("hidden");
-    user.classList.remove("hidden");
-    user.classList.add("flex");
-    console.log(token);
-  }
-  
+    const token = sessionStorage.getItem("token");
+    if (token !== null) {
+      auth.classList.add("hidden");
+      user.classList.remove("hidden");
+      user.classList.add("flex");
+      console.log(token);
+    }
   });
- 
-  
+
   function updateCartCounter() {
-    var cart = JSON.parse(localStorage.getItem('cart')) || [];
+    var cart = JSON.parse(localStorage.getItem("cart")) || [];
     var cartCount = cart.length;
-    $('#cart-count').text(cartCount);
+    $("#cart-count").text(cartCount);
     return cart;
   }
 </script>
