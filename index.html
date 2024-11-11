@@ -34,7 +34,7 @@
             </div>
             <div class="flex gap-7 justify-center md-2:justify-start">
               <button id="comencemos">¡Comencemos!</button>
-              <button id="prueba" class="bg-white text-black">
+              <button id="gratis" class="bg-white text-black">
                 Prueba gratis
               </button>
             </div>
@@ -337,16 +337,22 @@
   $(document).ready(function () {
     $("#header-placeholder").load("./src/html/header.html");
     $("#footer-placeholder").load("./src/html/footer.html");
-    $("#comencemos").click(function () {
-      const token = sessionStorage.getItem("token");
-      if (token != null) {
-        window.location.href = "./cursos.html";
-      } else {
+
+    token = sessionStorage.getItem("token");
+    $("#comencemos").on("click", function () {
+      if (token === null) {
         window.location.href = "./login.html";
+      } else {
+        window.location.href = "./cursos.html";
       }
     });
-    $("#prueba").click(function () {
-      window.location.href = "./cursos.html";
+
+    $("#gratis").on("click", function () {
+      localStorage.setItem(
+        "gratis",
+        "¡Escribinos indicando que buscas empezar tu curso gratis para recibir un cupón exclusivo!"
+      );
+      window.location.href = "./contacto.html";
     });
   });
 </script>

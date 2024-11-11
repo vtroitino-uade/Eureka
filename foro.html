@@ -34,6 +34,7 @@
         </div>
       </section>
       <section class="h-max md:w-full md:m-0 xl:m-auto xl:w-3/4 mt-4 sm:mt-10 p-4 sm:p-10">
+        <button>¡Hacé una pregunta!</button>
         <div class="flex flex-col gap-4">
           <div class="bg-white p-4 sm:p-6 rounded-lg shadow-xl">
             <p class="font-bold mb-2 sm:mb-4">Introducción a HTML</p>
@@ -102,7 +103,35 @@
       $(document).ready(function () {
         $("#header-placeholder").load("./src/html/header.html");
         $("#footer-placeholder").load("./src/html/footer.html");
+       
+        var notificationAlreadyInCart = $("<div></div>")
+      .text("Tu cuenta no está habilitada para participar del foro.")
+      .css({
+        position: "fixed",
+        top: "100px",
+        right: "10px",
+        background: "#fc0328",
+        color: "white",
+        padding: "10px",
+        borderRadius: "5px",
+        display: "none",
+        zIndex: 1000,
+      })
+      .appendTo("body");
+        $("button").on("click", function () {
+          if (!sessionStorage.getItem("token"))
+        {
+          localStorage.setItem("goBack", "./foro.html");
+          window.location.href = 'login.html';
+          return
+        }
+          showNotification(notificationAlreadyInCart);
+        });
       });
+
+      function showNotification(notification) {
+      notification.fadeIn().delay(2000).fadeOut();
+    }
     </script>
   </body>
 </html>

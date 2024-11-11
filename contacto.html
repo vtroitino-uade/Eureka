@@ -139,6 +139,11 @@
       $(document).ready(function () {
         $("#header-placeholder").load("./src/html/header.html");
         $("#footer-placeholder").load("./src/html/footer.html");
+        gratis = localStorage.getItem('gratis');
+        if(gratis){
+          $("#success").html("<p class='text-white bg-teal-500 p-4 rounded-md'>"+gratis+"</p>");
+          localStorage.removeItem('gratis');
+        }
         $("form").on("submit", function (event) {
           event.preventDefault();
           let isValid = true;
@@ -189,6 +194,7 @@
             // Clear all fields
             $("form")[0].reset();
           }
+
         });
       });
     </script>
