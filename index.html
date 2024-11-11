@@ -29,8 +29,8 @@
               <p>¡Tu éxito, nuestra misión!</p>
             </div>
             <div class="flex gap-7 justify-start">
-              <button class="">¡Comencemos!</button>
-              <button class="bg-white text-black">Prueba gratis</button>
+              <button id="comencemos" class="">¡Comencemos!</button>
+              <button id='gratis' class="bg-white text-black">Prueba gratis</button>
             </div>
             <div class="flex gap-4">
               <p class="text-p-sm-desktop">Publico general</p>
@@ -320,5 +320,19 @@
   $(document).ready(function () {
     $("#header-placeholder").load("./src/html/header.html");
     $("#footer-placeholder").load("./src/html/footer.html");
-  });
+
+    token = sessionStorage.getItem('token')
+    $('#comencemos').on('click', function(){
+      if (token === null){
+        window.location.href = './login.html'
+      }else{
+        window.location.href = './cursos.html'
+      }
+    })
+    
+    $('#gratis').on('click', function(){
+      localStorage.setItem('gratis', '¡Escribinos indicando que buscas empezar tu curso gratis para recibir un cupón exclusivo!')
+      window.location.href = './contacto.html';
+      });
+    });
 </script>
